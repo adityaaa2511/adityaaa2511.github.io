@@ -1,0 +1,48 @@
+{% if site.footer_fixed %}
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}.
+    {{ site.footer_text }}
+    {% if site.impressum_path %}
+    <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
+    {% endif %}
+    {% if site.last_updated %}
+    Last updated: {{ "now" | date: '%B %d, %Y' }}.
+    {% endif %}
+  </div>
+</footer>
+{% else %}
+<footer class="sticky-bottom mt-5">
+  <div class="container" style="height: 50px;">
+    {%if page.title != "Shubham Lohiya"%}
+    <div class="div-left">
+      &copy; Copyright {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}.
+      {{ site.footer_text }}
+      {% if site.impressum_path %}
+      <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
+      {% endif %}
+    </div>
+    <div class="div-right">
+      <!-- Social Icons -->
+      <div class="footer-social">
+        {% include social.html %}
+      </div>      
+    </div>
+    {% else %}
+    <p style="text-align:left; padding-top: 1em;">
+      &copy; Copyright {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}.
+      {{ site.footer_text }}
+      {% if site.impressum_path %}
+      <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
+      {% endif %}
+      <span style="float:right;">
+        {% if site.last_updated %}
+        Last updated: {{ "now" | date: '%B %d, %Y' }}.
+        {% endif %}
+      </span>
+    </p>
+    {% endif %}
+  </div>
+
+</footer>
+{% endif %}

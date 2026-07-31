@@ -1,0 +1,65 @@
+- title: Matformer - Optimizing Vision Transformers for Long-Tail Image Classification
+  guide: <a href="https://www.cse.iitb.ac.in/~ganesh/">Prof. Ganesh Ramakrishnan</a>, <a href="https://www.iitb.ac.in/">IIT Bombay </a>
+  image:
+    src: /assets/img/research/matformer.png
+    alt: 
+  date: November '24 - March '25
+  description: Conducting research on the Matformer architecture for Vision Transformers, optimizing long-tail image classification and improving Mean Average Precision (MaP) through experimentation with multiple architectural variations
+  links:
+    code: 
+    demo: 
+    blog: 
+    report: 
+
+- title: Detection and Mitigation of Hallucination in LegalLLM
+  guide: <a href="https://www.cse.iitb.ac.in/~pb/">Prof. Pushpak Bhattacharyya</a>, <a href="https://www.iitb.ac.in/">IIT Bombay </a>
+  image:
+    src: /assets/img/research/legalllm.png
+    alt: 
+  date: July '24 - May '25
+  description: Developed a high-precision legal advisory chatbot to provide accurate answers while addressing the issue of AI-generated inaccuracies, known as hallucinations. Used advanced techniques to improve factual reliability, including better information retrieval and response validation, ensuring credible and trustworthy outputs.
+  links:
+    code:
+    demo: www.cfilt.iitb.ac.in/consumer_chatbot
+    blog: 
+    report: /assets/pdf/research/chatbot.pdf
+
+- title: Noise Injection in Sequential Models
+  guide: <a href="https://www.cse.iitb.ac.in/~ganesh/">Prof. Ganesh Ramakrishnan</a>, <a href="https://www.iitb.ac.in/">IIT Bombay </a>
+  image:
+    src: /assets/img/research/noiseinject.png
+    alt: 
+  date: May '24 - August '24
+  description: Researched the effects of noise injection on sequential models like Transformers and LSTMs, developing a modified gradient descent algorithm to improve training stability. This work enhanced model accuracy, robustness, and generalization in NLP tasks, enabling faster convergence and better performance in diverse applications.
+  links:
+    code: https://github.com/Nahush-27/Effect-of-Noise-Injection-in-Sequential-models
+    demo: 
+    blog: 
+    report: /assets/pdf/research/noiseinject.pdf
+
+- title: Recommendation Systems for Smart Homes
+  guide: <a href="https://www.cse.iitb.ac.in/~pb/">Prof. Pushpak Bhattacharyya</a>, <a href="https://www.iitb.ac.in/">IIT Bombay </a>
+  image:
+    src: /assets/img/research/smarthome.png
+    alt: 
+  date: July '23 - May '24
+  description: We developed a Transformer and Temporal Convolution Network-based model to predict the timing of the next action in smart homes. The model incorporates RBF and Time2Vec embeddings to effectively capture temporal dynamics. By reformulating the regression problem as a classification task, we achieved a 10% improvement in accuracy and significantly reduced RMSE across multiple datasets, enhancing the reliability of smart home automation systems.
+  links:
+    code:
+    demo: 
+    blog: 
+    report: https://arxiv.org/abs/2411.18719
+
+- title: Automated Nano-Optical Measurement
+  guide: <a href="https://loqm.tech/anshuman/">Prof. Anshuman Kumar</a>, <a href="https://www.iitb.ac.in/">IIT Bombay </a>
+  image:
+    src: /assets/img/research/automation.jpg
+    alt: 
+  date: July '22 - April '23
+  description: Python-based automation of optical photoluminescence spectrometric data collection in quantum physics experiments, utilizing communication with a spectrometer and a motorized stage for efficient and time-saving data acquisition.
+  links:
+    code: https://github.com/Spandan2003/Automating-Nano-Optical-Measurements
+    demo: /assets/pdf/research/automation_ppt.pptx
+    blog: 
+    report: /assets/pdf/research/automation_report.pdf
+

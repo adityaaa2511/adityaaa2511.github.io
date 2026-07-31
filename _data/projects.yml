@@ -1,0 +1,95 @@
+- title: JPEG Image Compression
+  image:
+    src: /assets/img/project/jpeg.png
+    alt: 
+  date: September 2024 - November 2024
+  description: Developed the JPEG image compression algorithm in Python using Discrete Cosine Transform (DCT) and entropy encoding. Conducted a comparative analysis with homogeneous diffusion models to evaluate performance.
+  links:
+    code: https://github.com/Spandan2003/jpeg-image-compression
+    demo:
+    blog: 
+    report:
+
+- title: VanGoghAI
+  image:
+    src: /assets/img/project/vangogh.png
+    alt: 
+  date: May 2023 - July 2023
+  description: Implemented a Neural Style Transfer system using pre-trained VGG19 to blend real-life images and silhouettes with diverse artistic styles, generating logos and artistic compositions.
+  links:
+    code: https://github.com/Spandan2003/neural-style-transfer-art
+    demo:
+    blog: 
+    report:
+
+- title: NLP and Large Language Models
+  image:
+    src: /assets/img/project/nlp_llm.png
+    alt: 
+  date: July 2023 - September 2023
+  description: Built advanced NLP systems leveraging transformer architectures and LLMs for sentiment analysis, text classification, and chatbot applications, using techniques like n-grams and transformers.
+  links:
+    code: 
+    demo:
+    blog: 
+    report:
+
+- title: Deep Carlsen
+  image:
+    src: /assets/img/project/deepcarlsen.png
+    alt: 
+  date: May 2023 - July 2023
+  description: Developed a chess engine inspired by the Giraffe research paper, training it on 300+ features with deep learning and integrating Minimax with Alpha-Beta Pruning for efficient game tree analysis and optimal move selection.
+  links:
+    code: https://github.com/Spandan2003/soc23-DeepCarlsen
+    demo:
+    blog: 
+    report:
+
+- title: Elevator Control System using FPGA
+  image:
+    src: /assets/img/project/EE224.png
+    alt: 
+  date: January '23 - April '23
+  description: Designing an elevator control system which relies on hard coding to give us the optimal path of the elevator.
+  links: 
+    code: 
+    demo: /assets/img/project/EE224.mp4
+    model: https://circuitverse.org/users/174878/projects/elevator-82124d01-db64-422b-ae44-1a3ed5a752ea 
+    report: /assets/pdf/project/PH567.pdf
+
+- title: Python Tic Tac Toe AI Game using PyGame
+  image:
+    src: /assets/img/project/tictactoe.png
+    alt: 
+  date: May '22
+  description: Developed a GUI Tic-Tac-Toe game which plays with the user using an AI.
+  links:
+    code: https://github.com/Spandan2003/tic-tac-toe-game
+    demo: /assets/img/project/tictactoe_video.mp4
+    blog: 
+    report:
+
+- title: Bubble Trouble Game Development  
+  image:
+    src: /assets/img/project/bubbleshooter.png
+    alt: 
+  date: January '22 - April '22
+  description: Developed a bubble shooter game using Simplecpp graphics consisting of 10 levels which involve bubbles that bounce off walls, and take a health point from the shooter on hitting him while making him immune to damage for a short time
+  links:
+    code: https://github.com/Spandan2003/bubble-trouble-game
+    demo: /assets/img/project/bubble_vid.mp4
+    blog: 
+    report:
+
+- title: Analysis of dynamics of regulatory and signaling pathways in the cell
+  image:
+    src: /assets/img/project/PH567.png
+    alt: 
+  date: January '23 - April '23
+  description: Analysis how signal transmission and response occurs in the cell using feedforward and feedback signals represented by Non Linear Dynamics
+  links:
+    code: 
+    demo:
+    blog: 
+    report: /assets/pdf/project/PH567.pdf
