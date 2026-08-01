@@ -62,8 +62,26 @@ navpos: 3
       <h6>January '26 - April '26</h6>
     </div>  
     <ul>
-        <li>SQL, Functional Dependencies, Database Implementations</li>
-        <li>Indexing, Query Processing, Query Optimisation, Transactions</li>
+        <li>SQL, Functional Dependencies</li>
+        <li>Database Implementations</li>
+        <li>Indexing, Query Processing</li>
+        <li>Query Optimisation, Transactions</li>
+    </ul>
+    </p>
+    <br>
+</div>
+
+<div class="courses">
+    <p class="courses-text">
+      <strong>COL764: Information Retrieval and Web Search</strong> | <i>by Prof. Maya Ramnath</i><br/>
+    <div class="courses-bubble-with-date">
+      <h6>August '25 - November '25</h6>
+    </div>  
+    <ul>
+        <li>Inverted Indexes, Text Compression techniques, Boolean Retrieval</li>
+        <li>Vector-Space Model, Probabilistic Retrieval (BM25), Pseudo-Relevance feedback</li>
+        <li>Word2Vec, Retrieve & Rerank - MonoBERT, DuoBERT, Aggregation Methods, T5 model</li>
+        <li>Bi-encoders, Cross-encoders, Query Expansion, ColBERT</li>
     </ul>
     </p>
     <br>
@@ -86,15 +104,34 @@ navpos: 3
 
 <div class="courses">
     <p class="courses-text">
-      <strong>COL764: Information Retrieval and Web Search</strong> | <i>by Prof. Maya Ramnath</i><br/>
+      <strong>HUL315: Econometric Methods</strong> | <i>by Prof. Sisir Debnath</i><br/>
     <div class="courses-bubble-with-date">
       <h6>August '25 - November '25</h6>
     </div>  
     <ul>
-        <li>Inverted Indexes, Text Compression techniques, Boolean Retrieval</li>
-        <li>Vector-Space Model, Probabilistic Retrieval (BM25), Pseudo-Relevance feedback</li>
-        <li>Word2Vec, Retrieve & Rerank - MonoBERT, DuoBERT, Aggregation Methods, T5 model</li>
-        <li>Bi-encoders, Cross-encoders, Query Expansion, ColBERT</li>
+        <li>Ordinary Least Square Regression</li>
+        <li>Hypothesis Testing</li>
+        <li>Linear Regression with Multiple Regressors</li>
+        <li>Regression with Panel Data, Instrument Variable Regression</li>
+        <li>Probit, Logit Regression</li>
+    </ul>
+    </p>
+    <br>
+</div>
+
+<div class="courses">
+    <p class="courses-text">
+      <strong>ELL715: Digital Image Processing</strong> | <i>by Prof. Monika Aggarwal</i><br/>
+    <div class="courses-bubble-with-date">
+      <h6>August '25 - November '25</h6>
+    </div>  
+    <ul>
+        <li>Intensity Transformation and Spatial Filtering</li>
+        <li>Frequency Domain Filtering</li>
+        <li>Image Reconstruction and Restoration</li>
+        <li>Image Compression Techniques</li>
+        <li>Morphological Image Processing, Image Segmentation</li>
+        <li>Feature Extraction</li>
     </ul>
     </p>
     <br>
