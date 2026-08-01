@@ -136,3 +136,53 @@ navpos: 3
     </p>
     <br>
 </div>
+
+<div class="courses">
+    <p class="courses-text">
+      <strong>APL405: Machine Learning in Mechanics</strong> | <i>by Prof. Mohd. Rushdie</i><br/>
+    <div class="courses-bubble-with-date">
+      <h6>January '25 - April '25</h6>
+    </div>  
+    <ul>
+        <li>Supervised Learning: SVMs, naive bayes, Decision Trees</li>
+        <li>Unsupervised Learning: k-means, hierarchial clustering, kNN</li>
+        <li>Neural Networks, Backpropogation, Regularization</li>
+        <li>EM, PCA</li>
+    </ul>
+    </p>
+    <br>
+</div>
+
+<div class="courses">
+    <p class="courses-text">
+      <strong>COL202: Discrete Mathematical Structures</strong> | <i>by Prof. Amitabha Bagchi</i><br/>
+    <div class="courses-bubble-with-date">
+      <h6>January '25 - April '25</h6>
+    </div>  
+    <ul>
+        <li>Proofs, Well Ordering Principle</li>
+        <li>Mathematical Induction, Recursion</li>
+        <li>Graph Theory, Infinite Sets, Partial Orders</li>
+        <li>Asymptotes, Generating Functions</li>
+        <li>Number Theory</li>
+    </ul>
+    </p>
+    <br>
+</div>
+
+<div class="courses">
+    <p class="courses-text">
+      <strong>COL202: Discrete Mathematical Structures</strong> | <i>by Prof. Amitabha Bagchi</i><br/>
+    <div class="courses-bubble-with-date">
+      <h6>January '25 - April '25</h6>
+    </div>  
+    <ul>
+        <li>Proofs, Well Ordering Principle</li>
+        <li>Mathematical Induction, Recursion</li>
+        <li>Graph Theory, Infinite Sets, Partial Orders</li>
+        <li>Asymptotes, Generating Functions</li>
+        <li>Number Theory</li>
+    </ul>
+    </p>
+    <br>
+</div>
