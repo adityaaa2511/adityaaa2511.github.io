@@ -73,6 +73,23 @@ navpos: 3
 
 <div class="courses">
     <p class="courses-text">
+      <strong>MTL106: Probability and Stochastic Processes</strong> | <i>by Prof. Dharmaraja</i><br/>
+    <div class="courses-bubble-with-date">
+      <h6>January '26 - April '26</h6>
+    </div>  
+    <ul>
+        <li>Random Variables, Discrete and Continous Distributions</li>
+        <li>Functions of Random Variables, Moments, Generating Functions</li>
+        <li>Conditional Expectations, Covariance, Correlation</li>
+        <li>Modes of Convergence, LLN, CLT</li>
+        <li>Stochastic Processes - DTMC, CTMC, Queuing Models</li>
+    </ul>
+    </p>
+    <br>
+</div>
+
+<div class="courses">
+    <p class="courses-text">
       <strong>COL764: Information Retrieval and Web Search</strong> | <i>by Prof. Maya Ramnath</i><br/>
     <div class="courses-bubble-with-date">
       <h6>August '25 - November '25</h6>
@@ -172,16 +189,91 @@ navpos: 3
 
 <div class="courses">
     <p class="courses-text">
-      <strong>COL202: Discrete Mathematical Structures</strong> | <i>by Prof. Amitabha Bagchi</i><br/>
+      <strong>COL351: Analysis and Design of Algorithms</strong> | <i>by Prof. Keerti Choudhary</i><br/>
     <div class="courses-bubble-with-date">
       <h6>January '25 - April '25</h6>
     </div>  
     <ul>
-        <li>Proofs, Well Ordering Principle</li>
-        <li>Mathematical Induction, Recursion</li>
-        <li>Graph Theory, Infinite Sets, Partial Orders</li>
-        <li>Asymptotes, Generating Functions</li>
-        <li>Number Theory</li>
+        <li>Greedy Algorithms, Divide and Conquer</li>
+        <li>Dynamic Programming, Segment Trees</li>
+        <li>Graph Traversals - Topo Sort, Shortest Paths, MST, DSU, SCCs</li>
+        <li>Network Flows, P,NP,NP-complete problems</li>
+    </ul>
+    </p>
+    <br>
+</div>
+
+<div class="courses">
+    <p class="courses-text">
+      <strong>COL106: Data Structures and Algorithms</strong> | <i>by Prof. Amitabha Bagchi & Prof. Kumar Madhukar</i><br/>
+    <div class="courses-bubble-with-date">
+      <h6>January '24 - April '24</h6>
+    </div>  
+    <ul>
+        <li>Studied Stacks, Queue, Deque, Dictionaries, Hashing, Trees, AVL, Strings, Priority Queues, Binary Heap, Graphs and other Data Structures and their applications.</li>
+    </ul>
+    </p>
+    <br>
+</div>
+
+<div class="courses">
+    <p class="courses-text">
+      <strong>MTL107: Numerical Methods and Computations</strong> | <i>by Prof. Harish Kumar</i><br/>
+    <div class="courses-bubble-with-date">
+      <h6>January '24 - April '24</h6>
+    </div>  
+    <ul>
+        <li>Numerical Errors, Least Squares Approximation, Legendre & Chebyshev Polynomials</li>
+        <li>Solution of Nonlinear Equations: Fixed Point iteration, Bisection, Secant methods, Newton-Raphson Method</li>
+        <li>Interpolation: Lagrange Interpolation, Newtons Divided Differences, Finite Differences, Hermite Interpolation, Cubic Spline</li>
+        <li>Solution of System of linear equations: Gauss elimination, LU & Cholesky factorization</li>
+        <li>Iterative Methods: Jacobi, Gauss-Siedel & SOR methods</li>
+        <li>Numerical Differentiation and Integration</li>
+    </ul>
+    </p>
+    <br>
+</div>
+
+<div class="courses">
+    <p class="courses-text">
+      <strong>MTL101: Linear Algebra and Differential Equations</strong><br/>
+    <div class="courses-bubble-with-date">
+      <h6>March '23 - June '23</h6>
+    </div>  
+    <ul>
+        <li>Vector Spaces, Linear Independence, Span, Basis, System of Linear equations, Gauss Elimination</li>
+        <li>Rank-Nullity Theorem, Eigenvalues & Eigenvectors, Cayley-Hamilton Theorem</li>
+        <li>ODEs, Cauchy-Euler Equations, Method of undetermined coefficients, Wronskian, Power Series, Laplace Transform</li>
+    </ul>
+    </p>
+    <br>
+</div>
+
+<div class="courses">
+    <p class="courses-text">
+      <strong>COL100: Introduction to Computer Science</strong><br/>
+    <div class="courses-bubble-with-date">
+      <h6>November '22 - Feburary '23</h6>
+    </div>  
+    <ul>
+        <li>Basics of programming in python & C++, starting with variables, condtional statements, loops</li>
+        <li>Learn about arrays, strings and other data types</li>
+        <li>Pointers, Functions, Classes and Objects in order to grasp a basic knowledge of programming</li>
+    </ul>
+    </p>
+    <br>
+</div>
+
+<div class="courses">
+    <p class="courses-text">
+      <strong>MTL100: Calculus</strong><br/>
+    <div class="courses-bubble-with-date">
+      <h6>November '22 - Feburary '23</h6>
+    </div>  
+    <ul>
+        <li>Sequences, series, Limits, Convergence, Lagrange Multipliers, Taylor Series</li>
+        <li>Beta & Gamma functions, Partial Derivatives, Jacobians</li>
+        <li>Vector fields, Divergence & Curl, Line & surface Integrals</li>
     </ul>
     </p>
     <br>
