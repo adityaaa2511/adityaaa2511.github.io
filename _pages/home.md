@@ -6,7 +6,7 @@ description:
 
 profile:
   align: left
-  image: prof_pic.jpg
+  image: profile_pic.jpeg
   address:
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -16,11 +16,11 @@ social: false # includes social icons at the bottom of the page
 <!-- <br> -->
 <span style="font-weight:500; font-size: 25px"> Welcome to my AI/ML Journey! </span>
 
-Hello, I’m Aditya Saxena. Since my childhood, I have been curious about Modern systems, how they work and how are they developed. This led me to study Computational Mechanics & Computer Science at IIT Delhi. When I entered college in Nov '22, I witnessed the launch of ChatGPT- OpenAI's flagship AI model at the time. I was fascinated by its capabilities and problem solving skills. It is from here, my journey of learning AI and ML began. I 
+Hello, I’m Aditya Saxena. Since my childhood, I have been curious about Modern systems, how they work and how they are developed. This led me to study Computational Mechanics & Computer Science at IIT Delhi. When I entered college in Nov '22, I witnessed the launch of ChatGPT- OpenAI's flagship AI model at the time. Its ability to understand instuctions, solve problems and read multiple modalities fascinated me and from here, my journey of learning AI and ML began.
 
 My current interests revolve during Natural Language Processing, Multimodal LLMs and Reinforcement learning particularly:- Multilingual NLP, RL post-training and AI agents. I am also exploring Automatic Speech Recognition, Text-to-Speech models and Quantum Computing. One can find me at cafes or coffee shops reading about such stuff.
 
-Outside academics, I’ve always tried to keep life vibrant. I enjoy the intensity of sports like:- Football and Formula 1, the escapism of novels and books, and the imagination of anime. These interests keep me grounded and creative, reminding me that learning doesn’t only happen in classrooms or labs.
+Outside academics, I’ve always strived to keep life vibrant. I enjoy the intensity of sports like:- Football and Formula 1, the escapism of novels and books, and the imagination of anime. These interests keep me grounded and creative, reminding me that learning doesn’t only happen in classrooms or labs.
 
 This site is a little window into my journey — the projects I’ve worked on, the ideas I’m exploring, and the things that inspire me. Thanks for stopping by, and I hope you enjoy looking around.
 
