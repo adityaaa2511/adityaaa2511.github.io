@@ -1,21 +1,21 @@
-- title: JPEG Image Compression
+- title: Multilingual Chain-of-Thought Distillation
   image:
     src: /assets/img/project/jpeg.png
     alt: 
-  date: September 2024 - November 2024
-  description: Developed the JPEG image compression algorithm in Python using Discrete Cosine Transform (DCT) and entropy encoding. Conducted a comparative analysis with homogeneous diffusion models to evaluate performance.
+  date: April 2026
+  description: Distilled reasoning from Qwen2.5-7B into Qwen2.5-1.5B, Llama-3.2-1B — across English, Hindi, Bengali, Kannada and Tamil. Solved the cross-tokenizer problem by restricting logit KD to an aligned answer sub-vocabulary. Cut teacher decode tokens ~35% by running self-consistency in English and rendering once into the target language, and recovered 20% more of Tamil/Kannada traces via STaR-style rationalization. Eliminated an implicit 9x gradient skew toward Indic scripts with per-example length normalization; added script-adaptation pretraining to kill byte-fallback corruption.
   links:
     code: https://github.com/Spandan2003/jpeg-image-compression
     demo:
     blog: 
     report:
 
-- title: VanGoghAI
+- title: Training and Sampling from DDPM & DDIM
   image:
     src: /assets/img/project/vangogh.png
     alt: 
-  date: May 2023 - July 2023
-  description: Implemented a Neural Style Transfer system using pre-trained VGG19 to blend real-life images and silhouettes with diverse artistic styles, generating logos and artistic compositions.
+  date: April 2026
+  description: Implemented DDPM and DDIM from scratch in PyTorch, incorporating sinusoidal time embeddings, residual denoising networks, and iterative reverse diffusion for generative modeling. Conducted quantitative evaluation across variance schedules using mode coverage, Mahalanobis-distance analysis, and deterministic DDIM sampling with varying inference steps.
   links:
     code: https://github.com/Spandan2003/neural-style-transfer-art
     demo:
