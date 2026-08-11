@@ -4,14 +4,14 @@
 <table>
   <tr>
     <th>August 2026</th>
-    <td>Graduated from IIT Delhi with a BTech in Computational Mechanics and minor in Computer Science and AI/Data Science. Secured 5th place in the Department Based on GPA</td>
+    <td>Graduated from IIT Delhi with a BTech in Computational Mechanics and a minor in Computer Science. Secured 5th place in the Department Based on GPA</td>
   </tr>
   <tr>
     <th>April 2026</th>
     <td>Implemented several Safe-RL and Offline RL algorithms from scratch like:- PPO-Lag, IQL, CQL+AWR, TD3+BC as Adv. RL course assignment</td>
   </tr>
   <tr>
-    <th>March-April 2024</th>
+    <th>March-April 2026</th>
     <td>Coded up VAEs, GANs, flow-based models, energy-based models, DDPM, DDIM as part of Generative Modelling course assignments</td>
   </tr>
   <tr>
