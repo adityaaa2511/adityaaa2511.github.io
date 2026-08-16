@@ -3,7 +3,7 @@
     src: /assets/img/project/jpeg.png
     alt: 
   date: April 2026
-  description: Distilled CoT reasoning from Qwen2.5-7B into Qwen2.5-1.5B and Llama-3.2-1B students across 5 languages. Countered Indic token fertility with English-pivot self-consistency (k=4) + target-language rendering; raised usable Tamil/Kannada trace yield by 20\% via STaR-style gold-conditioned rationalization. Eliminated an 9× gradient skew towards Indic scripts with per-example length normalization and added script-adaptation pretraining to reduce byte-fallback corruption.
+  description: Distilled CoT reasoning from Qwen2.5-7B into Qwen2.5-1.5B and Llama-3.2-1B students across 5 languages. Countered Indic token fertility with English-pivot self-consistency (k=4) + target-language rendering; raised usable Tamil/Kannada trace yield by 20% via STaR-style gold-conditioned rationalization. Eliminated an 9× gradient skew towards Indic scripts with per-example length normalization and added script-adaptation pretraining to reduce byte-fallback corruption.
   links:
     code: https://github.com/Spandan2003/jpeg-image-compression
     demo:
@@ -99,7 +99,7 @@
     src: /assets/img/project/deepcarlsen.png
     alt: 
   date: December 2025
-  description: Implemented a decoder-only Transformer from scratch in PyTorch, including multi-head causal self-attention, sinusoidal positional encodings, residual connections, and LayerNorm. Trained on TinyStories Dataset using FastTest embeddings, mixed-precision (AMP), gradient accumulation, cosine LR schedule and perplexity-based evaluation. Built an efficient autoregressive generation pipeline with KV-cache, temperature \& top-k sampling, and beam search, enabling fast text decoding and coherent story generation. 
+  description: Implemented a decoder-only Transformer from scratch in PyTorch, including multi-head causal self-attention, sinusoidal positional encodings, residual connections, and LayerNorm. Trained on TinyStories Dataset using FastTest embeddings, mixed-precision (AMP), gradient accumulation, cosine LR schedule and perplexity-based evaluation. Built an efficient autoregressive generation pipeline with KV-cache, temperature & top-k sampling, and beam search, enabling fast text decoding and coherent story generation. 
   links:
     code: https://github.com/Spandan2003/soc23-DeepCarlsen
     demo:
