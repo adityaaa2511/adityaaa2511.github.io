@@ -118,12 +118,12 @@
     model: 
     report: 
 
-- title: Value-Based vs Policy-Gradient RL: Bias, Variance and Convergence
+- title: Value-Based vs Policy-Gradient RL - Bias, Variance and Convergence
   image:
     src: /assets/img/project/EE224.png
     alt: 
   date: November 2025
-  description: Implemented DQN, Double DQN, REINFORCE and Actor–Critic from scratch in PyTorch and compared them under matched architectures and training budgets. I measured DQN's overestimation bias against Double DQN's decoupled targets, ran a gradient-variance study across four REINFORCE baselines at sample sizes from 20 to 100 trajectories, and benchmarked Actor–Critic against DQN on convergence speed in both episodes and wall time.
+  description: Implemented DQN, Double DQN, REINFORCE and Actor-Critic from scratch in PyTorch and compared them under matched architectures and training budgets. I measured DQN's overestimation bias against Double DQN's decoupled targets, ran a gradient-variance study across four REINFORCE baselines at sample sizes from 20 to 100 trajectories, and benchmarked Actor–Critic against DQN on convergence speed in both episodes and wall time.
   links: 
     code: https://github.com/adityaaa2511/AIL-722-Reinforcement-Learning
     demo: 
