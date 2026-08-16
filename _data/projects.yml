@@ -3,7 +3,7 @@
     src: /assets/img/project/jpeg.png
     alt: 
   date: April 2026
-  description: Distilled CoT reasoning from Qwen2.5-7B into Qwen2.5-1.5B and Llama-3.2-1B students across 5 languages. Countered Indic token fertility with English-pivot self-consistency (k=4) + target-language rendering; raised usable Tamil/Kannada trace yield by 20% via STaR-style gold-conditioned rationalization. Eliminated an 9× gradient skew towards Indic scripts with per-example length normalization and added script-adaptation pretraining to reduce byte-fallback corruption.
+  description: Distilled CoT reasoning from Qwen2.5-7B into Qwen2.5-1.5B and Llama-3.2-1B students across 5 languages. Countered Indic token fertility with English-pivot self-consistency (k=4) + target-language rendering; raised usable Tamil/Kannada trace yield by 20% via STaR-style gold-conditioned rationalization. Eliminated an 9× gradient skew towards Indic scripts with per-example length normalization and added script-adaptation pretraining to reduce byte-fallback corruption
   links:
     code: https://github.com/Spandan2003/jpeg-image-compression
     demo:
@@ -15,7 +15,7 @@
     src: /assets/img/project/bubbleshooter.png
     alt: 
   date: April 2026
-  description: Implemented PPO-Lagrangian from scratch for constrained MDPs, using dual reward and cost critics with separate GAE estimators, and supporting three actor objectives (standard Lagrangian, augmented Lagrangian with an adaptive quadratic penalty, and P3O clipped penalty) alongside two Lagrange multiplier update rules. Ran a 36-run sweep across every objective and rule combination on SafetyHopperVelocity and SafetyHalfCheetahVelocity for 1M timesteps and 3 seeds, identifying objective-2 & rule-2 as the best safety versus return trade-off.
+  description: Coded PPO-Lagrangian from scratch for constrained MDPs, using dual reward and cost critics with separate GAE estimators, and supporting three actor objectives (standard Lagrangian, augmented Lagrangian with an adaptive quadratic penalty, and P3O clipped penalty) alongside two Lagrange multiplier update rules. Ran a 36-run sweep across every objective and rule combination on SafetyHopperVelocity and SafetyHalfCheetahVelocity for 1M timesteps and 3 seeds, identifying objective-2 & rule-2 as the best safety versus return trade-off
   links:
     code: https://github.com/Spandan2003/bubble-trouble-game
     demo: /assets/img/project/bubble_vid.mp4
@@ -27,7 +27,7 @@
     src: /assets/img/project/PH567.png
     alt: 
   date: April 2026
-  description: Built an offline RL data-scaling study that decoupled value learning from policy learning across TD3+BC, IQL+AWR and CQL+AWR at 10%, 50% and 100% dataset fractions on D4RL kitchen and hopper-medium, using Minari and d3rlpy. Produced a 3x3 scaling matrix per algorithm and showed that policy learning was the binding constraint on final return. Implemented Implicit Q-Learning from scratch in PyTorch, using expectile regression for the value function and advantage-weighted regression for policy extraction.
+  description: Built an offline RL data-scaling study that decoupled value learning from policy learning across TD3+BC, IQL+AWR and CQL+AWR at 10%, 50% and 100% dataset fractions on D4RL kitchen and hopper-medium, using Minari and d3rlpy. Produced a 3x3 scaling matrix per algorithm and showed that policy learning was the binding constraint on final return. Implemented Implicit Q-Learning from scratch in PyTorch, using expectile regression for the value function and advantage-weighted regression for policy extraction
   links:
     code: 
     demo:
@@ -39,10 +39,10 @@
     src: /assets/img/project/tictactoe.png
     alt: 
   date: March-April 2026
-  description: Implemented a query execution engine in Rust that answers SQL queries over multi-gigabyte tables under a hard 64 MB address-space cap, single-threaded and with all filesystem writes disabled. Designed the operator pipeline and buffer management to stream results back to the monitor while minimising block reads and writes, scored directly on the simulator's estimated disk time. 
+  description: Implemented a query execution engine in Rust that answers SQL queries over multi-gigabyte tables under a hard 64 MB address-space cap, single-threaded and with all filesystem writes disabled. Designed the operator pipeline and buffer management to stream results back to the monitor while minimising block reads and writes, scored directly on the simulator's estimated disk time 
   links:
-    code: https://github.com/Spandan2003/tic-tac-toe-game
-    demo: /assets/img/project/tictactoe_video.mp4
+    code: https://github.com/Pratyush-1509/COL362
+    demo: 
     blog: 
     report:
 
@@ -51,7 +51,7 @@
     src: /assets/img/project/nlp_llm.png
     alt: 
   date: March 2026
-  description: Built a LoRA-tuned Qwen2.5-1.5B relation classifier for 5 languages. Used a staged curriculum of language-adaptive pretraining on unlabelled Indic corpora followed by task tuning on upsampled Indic data. Reframed generative extraction as label-ID prediction under greedy decoding to eliminate hallucinated labels, trained with interleaved LM and task loss to gain coverage of all four Indian languages. Designed a training-free in-context learning pipeline on Llama-3.1-8B using a two-block prompt with a byte-identical ontology prefix for vLLM prefix caching.
+  description: Built a LoRA-tuned Qwen2.5-1.5B relation classifier for 5 languages. Used a staged curriculum of language-adaptive pretraining on unlabelled Indic corpora followed by task tuning on upsampled Indic data. Reframed generative extraction as label-ID prediction under greedy decoding to eliminate hallucinated labels, trained with interleaved LM and task loss to gain coverage of all four Indian languages. Designed a training-free in-context learning pipeline on Llama-3.1-8B using a two-block prompt with a byte-identical ontology prefix for vLLM prefix caching
   links:
     code: 
     demo:
@@ -75,7 +75,7 @@
     src: /assets/img/project/vangogh.png
     alt: 
   date: March 2026
-  description: Implemented DDPM and DDIM from scratch in PyTorch, incorporating sinusoidal time embeddings, residual denoising networks, and iterative reverse diffusion for generative modeling. Conducted quantitative evaluation across variance schedules using mode coverage, Mahalanobis-distance analysis, and deterministic DDIM sampling with varying inference steps.
+  description: Implemented DDPM and DDIM from scratch in PyTorch, incorporating sinusoidal time embeddings, residual denoising networks, and iterative reverse diffusion for generative modeling. Conducted quantitative evaluation across variance schedules using mode coverage, Mahalanobis-distance analysis, and deterministic DDIM sampling with varying inference steps
   links:
     code: https://github.com/Spandan2003/neural-style-transfer-art
     demo:
@@ -99,9 +99,82 @@
     src: /assets/img/project/deepcarlsen.png
     alt: 
   date: December 2025
-  description: Implemented a decoder-only Transformer from scratch in PyTorch, including multi-head causal self-attention, sinusoidal positional encodings, residual connections, and LayerNorm. Trained on TinyStories Dataset using FastTest embeddings, mixed-precision (AMP), gradient accumulation, cosine LR schedule and perplexity-based evaluation. Built an efficient autoregressive generation pipeline with KV-cache, temperature & top-k sampling, and beam search, enabling fast text decoding and coherent story generation. 
+  description: Constructed a decoder-only Transformer from scratch in PyTorch, including multi-head causal self-attention, sinusoidal positional encodings, residual connections, and LayerNorm. Trained on TinyStories Dataset using FastTest embeddings, mixed-precision (AMP), gradient accumulation, cosine LR schedule and perplexity-based evaluation. Built an efficient autoregressive generation pipeline with KV-cache, temperature & top-k sampling, and beam search, enabling fast text decoding and coherent story generation
   links:
-    code: https://github.com/Spandan2003/soc23-DeepCarlsen
+    code: https://github.com/adityaaa2511/AIL861-Advanced-LLMs
+    demo:
+    blog: 
+    report:
+
+- title: Dense Retrieval - Bi-encoders, Late Interaction and Query Reformulation
+  image:
+    src: /assets/img/project/EE224.png
+    alt: 
+  date: November 2025
+  description: Built a dense passage retrieval pipeline over MS MARCO using a DistilBERT bi-encoder, and benchmarked it against the monoBERT retrieve-and-rerank system from my previous project on both accuracy and query latency — quantifying what single-vector retrieval trades away for its speed advantage. Developed a dense query reformulation method for sparse retrieval on the CORD-19 collection, beating BM25 and RM3 expansion baselines on P@10, R@10 and F-measure
+  links: 
+    code: https://github.com/adityaaa2511/COL764-Information-Retrieval-and-Web-Search
+    demo: 
+    model: 
+    report: 
+
+- title: Value-Based vs Policy-Gradient RL: Bias, Variance and Convergence
+  image:
+    src: /assets/img/project/EE224.png
+    alt: 
+  date: November 2025
+  description: Implemented DQN, Double DQN, REINFORCE and Actor–Critic from scratch in PyTorch and compared them under matched architectures and training budgets. I measured DQN's overestimation bias against Double DQN's decoupled targets, ran a gradient-variance study across four REINFORCE baselines at sample sizes from 20 to 100 trajectories, and benchmarked Actor–Critic against DQN on convergence speed in both episodes and wall time.
+  links: 
+    code: https://github.com/adityaaa2511/AIL-722-Reinforcement-Learning
+    demo: 
+    model: 
+    report: 
+
+- title: Neural Text Ranking: Retrieve-and-Rerank
+  image:
+    src: /assets/img/project/EE224.png
+    alt: 
+  date: October 2025
+  description: Formulated a two-stage passage ranking system evaluated on the TREC Deep Learning Hard query set. I implemented a BM25 first stage over the MS MARCO passage collection feeding a BERT cross-encoder that rescores query–passage pairs, and swept the candidate depth k to trace the recall–precision trade-off against reranker cost and benchmarked monoT5 and ColBERT rerankers within the same framework across NDCG@{1,5,10} and MRR@10, and improved on the strongest configuration using PRF, lifting NDCG@10 from 0.4 to 0.62 
+  links: 
+    code: https://github.com/adityaaa2511/COL764-Information-Retrieval-and-Web-Search
+    demo: 
+    model:  
+    report: 
+
+
+- title: Deep Value-Based RL - DQN, Deep SARSA
+  image:
+    src: /assets/img/project/EE224.png
+    alt: 
+  date: October 2025
+  description: Coded deep Q-learning and Deep SARSA agents from scratch in PyTorch across four control problems, building the replay buffer, target network and epsilon-decay machinery myself rather than using an RL library
+  links: 
+    code: https://github.com/adityaaa2511/AIL-722-Reinforcement-Learning
+    demo: 
+    model: 
+    report: 
+
+- title: Concurrent Network Server from Scratch
+  image:
+    src: /assets/img/project/EE224.png
+    alt: 
+  date: December 2024
+  description: Built event-driven TCP servers in C++ directly on the POSIX sockets API, using epoll with non-blocking sockets and a worker thread pool to serve many concurrent clients from a single accept loop. Implemented a per-connection state machine that buffers partial reads and resumes interrupted writes on EAGAIN/EWOULDBLOCK, so no client blocks the event loop, along with HTTP response handling and a remote command-execution service with credential-based authentication
+  links: 
+    code: https://github.com/adityaaa2511/Servers_from_scratch
+    demo: 
+    model: 
+    report: 
+
+- title: Time Series Classification via Image Encodings
+  image:
+    src: /assets/img/project/nlp_llm.png
+    alt: 
+  date: January 2026
+  description: Encoded univariate time series as 2D images to make them tractable for convolutional models, comparing Gramian Angular Fields against Markov Transition Fields on the UCR GunPoint dataset. The GAF encoding reached 98.7% test accuracy against 88.0% for MTF, indicating that the angular representation preserves more discriminative temporal structure on this task
+  links:
+    code: https://github.com/adityaaa2511/TimeSeriesAnalysis
     demo:
     blog: 
     report:
