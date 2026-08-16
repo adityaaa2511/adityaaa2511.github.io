@@ -171,7 +171,7 @@
   image:
     src: /assets/img/project/nlp_llm.png
     alt: 
-  date: January 2026
+  date: January 2024
   description: Encoded univariate time series as 2D images to make them tractable for convolutional models, comparing Gramian Angular Fields against Markov Transition Fields on the UCR GunPoint dataset. The GAF encoding reached 98.7% test accuracy against 88.0% for MTF, indicating that the angular representation preserves more discriminative temporal structure on this task
   links:
     code: https://github.com/adityaaa2511/TimeSeriesAnalysis

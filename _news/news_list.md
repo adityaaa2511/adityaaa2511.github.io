@@ -8,11 +8,11 @@
   </tr>
   <tr>
     <th>April 2026</th>
-    <td>Implemented several Safe-RL and Offline RL algorithms from scratch like:- PPO-Lag, IQL, CQL+AWR, TD3+BC as Adv. RL course assignment</td>
+    <td>Implemented several Safe-RL and Offline RL algorithms from scratch like:- PPO-Lag, IQL, CQL+AWR, TD3+BC.</td>
   </tr>
   <tr>
     <th>March-April 2026</th>
-    <td>Coded up VAEs, GANs, flow-based models, energy-based models, DDPM, DDIM as part of Generative Modelling course assignments</td>
+    <td>Coded up VAEs, GANs, flow-based models, energy-based models, DDPM, DDIM as Generative modelling course assignments</td>
   </tr>
   <tr>
     <th>March-April 2026</th>
@@ -37,10 +37,6 @@
   <tr>
     <th>November 2025</th>
     <td>Researched about and developed a retrieve-rerank pipeline using BERT-variants for Information Retrieval Course Assignment</td>
-  </tr>
-  <tr>
-    <th>October 2025</th>
-    <td>Implemented Deep-Q Learning & Actor-Critic assignments in AIL722: Intro. to Reinforcement Learning Course</td>
   </tr>
   <tr>
     <th>July 2025</th>
