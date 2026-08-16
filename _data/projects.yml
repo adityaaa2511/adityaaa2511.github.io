@@ -130,7 +130,7 @@
     model: 
     report: 
 
-- title: Neural Text Ranking: Retrieve-and-Rerank
+- title: Neural Text Ranking - Retrieve-and-Rerank
   image:
     src: /assets/img/project/EE224.png
     alt: 
