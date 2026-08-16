@@ -16,10 +16,6 @@
   </tr>
   <tr>
     <th>March-April 2026</th>
-    <td>Designed and constructed a query execution engine in Rust that operates under a strict memory budget, optimized it for minimal disk I/O and efficient in-memory computations for Database Management course project</td>
-  </tr>
-  <tr>
-    <th>March-April 2026</th>
     <td>Implemented cross-lingual relation extraction using LoRA and multi-lingual distillation as part of the assignments for NLP course</td>
   </tr>
   <tr>
