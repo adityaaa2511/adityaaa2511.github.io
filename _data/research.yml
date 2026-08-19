@@ -8,7 +8,7 @@
     code: https://github.com/adityaaa2511/Graph-Neural-Network
     demo: 
     model: 
-    report: /assets/pdf/research/SURA_proposal.pdf
+    report: /assets/pdf/research/SURA_Proposal.pdf
 
 - title: Detection and Mitigation of Hallucination in LegalLLM
   guide: <a href="https://www.cse.iitb.ac.in/~pb/">Prof. Pushpak Bhattacharyya</a>, <a href="https://www.iitb.ac.in/">IIT Bombay </a>
