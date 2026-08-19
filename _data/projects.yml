@@ -130,6 +130,18 @@
     model: 
     report: 
 
+- title: Silhouette Tunnel Based Hand Gesture Authentication
+  image:
+    src: /assets/img/project/EE224.png
+    alt: 
+  date: October - November 2025
+  description: Developed a depth-based hand gesture authentication system using Silhouette Tunnel, covariance descriptors, temporal hierarchy, and depth-based morphology features. Proposed a Multi-Scale Silhouette Tunnel (MS-ST) descriptor across 3 spatial scales, achieving ~21% average EER reduction with Numba-accelerated covariance computation.
+  links: 
+    code: https://github.com/adityaaa2511/COL764-Information-Retrieval-and-Web-Search
+    demo: 
+    model: 
+    report: /assets/pdf/project/ELL715_Project.pdf
+
 - title: Neural Text Ranking - Retrieve-and-Rerank
   image:
     src: /assets/img/project/EE224.png
