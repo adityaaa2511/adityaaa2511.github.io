@@ -167,18 +167,6 @@
     model: 
     report: 
 
-- title: Analysing Multiphase Flows using Graph Neural Networks
-  image:
-    src: /assets/img/project/EE224.png
-    alt: 
-  date: January - December 2024
-  description: Developed a Graph Neural Network (GNN) framework to model spatiotemporal evolution of multiphase flows using CFD-generated simulation data. Represented packed-bed flow domains as Voronoi-based graphs, encoding fluid volume fractions as node features and relative spatial coordinates as edge features. Designed and optimized GCN/GAT architectures with learned edge encoders, achieving 90%+ training accuracy for force-chain classification. Formulated multiphase-flow prediction as a spatiotemporal regression task using log-cosh loss, and evaluated the model’s ability to generalize across temporal steps and larger flow domains.
-  links: 
-    code: https://github.com/adityaaa2511/Graph-Neural-Network
-    demo: 
-    model: 
-    report: /assets/pdf/project/SURA_proposal.pdf
-
 - title: Time Series Classification via Image Encodings
   image:
     src: /assets/img/project/nlp_llm.png
