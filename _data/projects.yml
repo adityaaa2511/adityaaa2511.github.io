@@ -99,7 +99,7 @@
     src: /assets/img/project/decoder.png
     alt: 
   date: December 2025
-  description: Constructed a decoder-only Transformer from scratch in PyTorch, including multi-head causal self-attention, sinusoidal positional encodings, residual connections, and LayerNorm. Trained on TinyStories Dataset using FastTest embeddings, mixed-precision (AMP), gradient accumulation, cosine LR schedule and perplexity-based evaluation. Built an efficient autoregressive generation pipeline with KV-cache, temperature & top-k sampling, and beam search, enabling fast text decoding and coherent story generation
+  description: Constructed a decoder-only Transformer from scratch in PyTorch, including multi-head causal self-attention & sinusoidal positional encodings. Trained on TinyStories Dataset using mixed-precision (AMP), gradient accumulation, cosine LR schedule and perplexity-based evaluation. Built an efficient autoregressive generation pipeline with KV-cache, top-k sampling, and beam search, enabling fast text decoding and coherent story generation
   links:
     code: https://github.com/adityaaa2511/AIL861-Advanced-LLMs
     demo:
@@ -111,7 +111,7 @@
     src: /assets/img/project/BERT.png
     alt: 
   date: November 2025
-  description: Evaluated sparse BM25, BERT/ELECTRA cross-encoders, and DistilBERT bi-encoder retrieval pipelines on the MS MARCO dataset, analyzing accuracy–latency trade-offs. Implemented query reformulation using T5-based generative expansion and CEQE-based contextualized pseudo-relevance feedback, with coordinate-ascent hyperparameter tuning. Tuned BM25 and RM3 on the CORD-19 corpus, achieving a ~22% improvement in F1@10 over the original BM25 baseline and outperforming the transformer-based reformulation methods.
+  description: Evaluated sparse BM25, BERT/ELECTRA cross-encoders, and DistilBERT bi-encoder retrieval pipelines on the MS MARCO dataset. Implemented query reformulation using T5-based generative expansion and CEQE-based contextualized pseudo-relevance feedback. Tuned BM25 and RM3 on the CORD-19 corpus, achieving a ~22% improvement in F1@10 over the original BM25 baseline and outperforming the transformer-based reformulation methods
   links: 
     code: https://github.com/adityaaa2511/COL764-Information-Retrieval-and-Web-Search
     demo: 
@@ -123,7 +123,7 @@
     src: /assets/img/project/Actor-Critic.png
     alt: 
   date: November 2025
-  description: Implemented DQN and Double DQN on LunarLander-v3 to analyze Q-value overestimation bias, demonstrating how Double DQN reduces bias by decoupling action selection and evaluation. Analyzed REINFORCE gradient variance using no-baseline, average-reward, reward-to-go, and learned value-function baselines, finding the value-function baseline produced the smallest gradient estimates and tighter variance. Compared PPO, A2C, Actor-Critic, and DQN across continuous-control and LunarLander environments, finding PPO more stable/sample-efficient and DQN faster to converge (6.3 vs 13.7) min.
+  description: Implemented DQN and Double DQN on LunarLander-v3 to analyze Q-value overestimation bias. Analyzed REINFORCE gradient variance using no-baseline, average-reward, reward-to-go, and learned value-function baselines. Compared PPO, A2C, Actor-Critic, and DQN across the LunarLander environment, finding PPO more stable/sample-efficient and DQN faster to converge
   links: 
     code: https://github.com/adityaaa2511/AIL-722-Reinforcement-Learning
     demo: 
@@ -147,7 +147,7 @@
     src: /assets/img/project/Retrieve-rerank.png
     alt: 
   date: October 2025
-  description: Implemented a retrieve-and-rerank information retrieval pipeline on the TREC DL Hard dataset using BM25 and transformer-based cross-encoders including BERT, MiniLM, ELECTRA, and monoT5. Conducted a systematic comparison across NDCG@1/5/10 and MRR@10, analyzing the impact of retrieval depth and model size; ELECTRA achieved the best baseline performance with 0.514 NDCG@1 and 0.712 MRR@10. Designed a multi-stage BM25 → MiniLM-L12 → Top-20 → ELECTRA reranking pipeline, improving MRR@10 from 0.7111 to 0.7155 and NDCG@10 from 0.4072 to 0.4096.
+  description: Implemented a retrieve-and-rerank information retrieval pipeline on the TREC DL Hard dataset using BM25 and transformer-based cross-encoders including BERT, MiniLM, ELECTRA, and monoT5. Conducted a systematic comparison across NDCG@1/5/10 and MRR@10, analyzing the impact of retrieval depth and model size. Also, designed a multi-stage BM25 → MiniLM-L12 → Top-20 → ELECTRA reranking pipeline, improving MRR@10 from 0.7111 to 0.7155 and NDCG@10 from 0.4072 to 0.4096.
   links: 
     code: https://github.com/adityaaa2511/COL764-Information-Retrieval-and-Web-Search
     demo: 
@@ -160,7 +160,7 @@
     src: /assets/img/project/Q-network.png
     alt: 
   date: October 2025
-  description: Constructed Deep Q-Networks (DQN) with linear and non-linear Q-networks, experience replay, target networks, and ε-greedy exploration, evaluating generalization under distribution shift in a modified Cliff Walking environment. Implemented Deep SARSA with neural Q-function approximation and on-policy experience replay for Lunar Lander-v2, achieving a mean reward of 278.5 ± 19 over 100 evaluation episodes. Applied DQN to portfolio optimization, comparing final-wealth maximization against a risk-aware objective across 100 seeds; the risk-aware agent achieved 72.865 mean final wealth with 15.53 std., versus 65 with 16.8 std. for final-wealth maximization.
+  description: Constructed Deep Q-Networks (DQN), experience replay, target networks, and ε-greedy exploration, evaluating generalization under distribution shift in a modified Cliff Walking environment. Implemented Deep SARSA and on-policy experience replay for Lunar Lander-v2, achieving a mean reward of 278.5 ± 19 over 100 evaluation episodes. Applied DQN to portfolio optimization, comparing final-wealth maximization against a risk-aware objective across 100 seeds
   links: 
     code: https://github.com/adityaaa2511/AIL-722-Reinforcement-Learning
     demo: 
