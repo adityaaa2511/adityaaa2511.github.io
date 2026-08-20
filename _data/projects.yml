@@ -155,7 +155,7 @@
     report: /assets/pdf/project/COL764_Assignment3.pdf
 
 
-- title: Deep Reinforcement Learning for Distribution Shift & Portfolio Optimization
+- title: Deep RL for Distribution Shift & Portfolio Optimization
   image:
     src: /assets/img/project/Q-network.png
     alt: 
@@ -172,7 +172,7 @@
     src: /assets/img/project/Server.png
     alt: 
   date: December 2024
-  description: Built event-driven TCP servers in C++ directly on the POSIX sockets API, using epoll with non-blocking sockets and a worker thread pool to serve many concurrent clients from a single accept loop. Implemented a per-connection state machine that buffers partial reads and resumes interrupted writes on EAGAIN/EWOULDBLOCK, so no client blocks the event loop, along with HTTP response handling and a remote command-execution service with credential-based authentication
+  description: Built event-driven TCP servers in C++ directly on the POSIX sockets API, using epoll with non-blocking sockets and a worker thread pool to serve many concurrent clients from a single accept loop. Implemented a per-connection state machine that buffers partial reads and resumes interrupted writes on EAGAIN/EWOULDBLOCK, along with HTTP response handling and a remote command-execution service with credential-based authentication
   links: 
     code: https://github.com/adityaaa2511/Servers_from_scratch
     demo: 
