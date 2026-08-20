@@ -24,7 +24,7 @@
 
 - title: Offline RL - Data Scaling and Implicit Q-Learning
   image:
-    src: assets/img/project/offline.png
+    src: /assets/img/project/offline.png
     alt: 
   date: April 2026
   description: Built an offline RL data-scaling study that decoupled value learning from policy learning across TD3+BC, IQL+AWR and CQL+AWR at 10%, 50% and 100% dataset fractions on D4RL kitchen and hopper-medium, using Minari and d3rlpy. Produced a 3x3 scaling matrix per algorithm and showed that policy learning was the binding constraint on final return. Implemented Implicit Q-Learning from scratch in PyTorch, using expectile regression for the value function and advantage-weighted regression for policy extraction
