@@ -184,7 +184,7 @@
     src: /assets/img/project/Time_series.png
     alt: 
   date: January 2024
-  description: Encoded univariate time series as 2D images to make them tractable for CNNs, comparing Gramian Angular Fields against Markov Transition Fields on the UCR GunPoint dataset. The GAF encoding reached 98.7% test accuracy against 88.0% for MTF, indicating that angular representation preserves more discriminative temporal structure on this task
+  description: Encoded univariate time series as 2D images to make them tractable for CNNs, comparing Gramian Angular Fields against Markov Transition Fields on UCR GunPoint dataset. The GAF encoding reached 98.7% test accuracy against 88% for MTF, indicating that angular representation preserves more discriminative temporal structure on this task
   links:
     code: https://github.com/adityaaa2511/TimeSeriesAnalysis
     demo:
