@@ -222,8 +222,8 @@ navpos: 3
     </div>  
     <ul>
         <li>Numerical Errors, Least Squares Approximation, Legendre & Chebyshev Polynomials</li>
-        <li>Solution of Nonlinear Equations: Fixed Point iteration, Bisection, Secant methods, Newton-Raphson Method</li>
-        <li>Interpolation: Lagrange Interpolation, Newtons Divided Differences, Finite Differences, Hermite Interpolation, Cubic Spline</li>
+        <li>Fixed Point iteration, Bisection, Secant methods, Newton-Raphson Method</li>
+        <li>Lagrange Interpolation, Newtons Divided Differences, Finite Differences, Cubic Spline</li>
         <li>Solution of System of linear equations: Gauss elimination, LU & Cholesky factorization</li>
         <li>Iterative Methods: Jacobi, Gauss-Siedel & SOR methods</li>
         <li>Numerical Differentiation and Integration</li>

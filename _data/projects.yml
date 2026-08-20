@@ -172,7 +172,7 @@
     src: /assets/img/project/Server.png
     alt: 
   date: December 2024
-  description: Built event-driven TCP servers in C++ directly on the POSIX sockets API, using epoll with non-blocking sockets and a worker thread pool to serve many concurrent clients from a single accept loop. Implemented a per-connection state machine that buffers partial reads and resumes interrupted writes on EAGAIN/EWOULDBLOCK, along with HTTP response handling and a remote command-execution service with credential-based authentication
+  description: Built event-driven TCP servers in C++ directly on the POSIX sockets API, using epoll with non-blocking sockets & a worker thread pool to serve many concurrent clients from a single accept loop. Implemented a per-connection state machine that buffers partial reads & resumes interrupted writes on EAGAIN/EWOULDBLOCK, with HTTP response handling and remote command-execution service using credential-based authentication
   links: 
     code: https://github.com/adityaaa2511/Servers_from_scratch
     demo: 
@@ -184,7 +184,7 @@
     src: /assets/img/project/Time_series.png
     alt: 
   date: January 2024
-  description: Encoded univariate time series as 2D images to make them tractable for convolutional models, comparing Gramian Angular Fields against Markov Transition Fields on the UCR GunPoint dataset. The GAF encoding reached 98.7% test accuracy against 88.0% for MTF, indicating that angular representation preserves more discriminative temporal structure on this task
+  description: Encoded univariate time series as 2D images to make them tractable for CNNs, comparing Gramian Angular Fields against Markov Transition Fields on the UCR GunPoint dataset. The GAF encoding reached 98.7% test accuracy against 88.0% for MTF, indicating that angular representation preserves more discriminative temporal structure on this task
   links:
     code: https://github.com/adityaaa2511/TimeSeriesAnalysis
     demo:
