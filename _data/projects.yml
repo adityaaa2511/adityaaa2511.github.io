@@ -5,7 +5,7 @@
   date: April 2026
   description: Distilled CoT reasoning from Qwen2.5-7B into Qwen2.5-1.5B and Llama-3.2-1B students across 5 languages. Countered Indic token fertility with English-pivot self-consistency (k=4) + target-language rendering; raised usable Tamil/Kannada trace yield by 20% via STaR-style gold-conditioned rationalization. Eliminated an 9× gradient skew towards Indic scripts with per-example length normalization and added script-adaptation pretraining to reduce byte-fallback corruption
   links:
-    code: https://github.com/Spandan2003/jpeg-image-compression
+    code: https://github.com/adityaaa2511/COL772-Natural-Language-Processing
     demo:
     blog: 
     report:
@@ -17,26 +17,26 @@
   date: April 2026
   description: Coded PPO-Lagrangian from scratch for constrained MDPs, using dual reward and cost critics with separate GAE estimators, and supporting three actor objectives (standard Lagrangian, augmented Lagrangian with an adaptive quadratic penalty, and P3O clipped penalty) alongside two Lagrange multiplier update rules. Ran a 36-run sweep across every objective and rule combination on SafetyHopperVelocity and SafetyHalfCheetahVelocity for 1M timesteps and 3 seeds, identifying objective-2 & rule-2 as the best safety versus return trade-off
   links:
-    code: https://github.com/Spandan2003/bubble-trouble-game
-    demo: /assets/img/project/bubble_vid.mp4
+    code: https://github.com/adityaaa2511/AIL841-Advanced-Reinforcement-Learning
+    demo: 
     blog: 
     report:
 
 - title: Offline RL - Data Scaling and Implicit Q-Learning
   image:
-    src: /assets/img/project/PH567.png
+    src: /assets/img/project/offline.png
     alt: 
   date: April 2026
   description: Built an offline RL data-scaling study that decoupled value learning from policy learning across TD3+BC, IQL+AWR and CQL+AWR at 10%, 50% and 100% dataset fractions on D4RL kitchen and hopper-medium, using Minari and d3rlpy. Produced a 3x3 scaling matrix per algorithm and showed that policy learning was the binding constraint on final return. Implemented Implicit Q-Learning from scratch in PyTorch, using expectile regression for the value function and advantage-weighted regression for policy extraction
   links:
-    code: 
+    code: https://github.com/adityaaa2511/AIL841-Advanced-Reinforcement-Learning
     demo:
     blog: 
-    report: /assets/pdf/project/PH567.pdf
+    report: 
 
 - title: Out-of-Core Query Execution Engine
   image:
-    src: /assets/img/project/tictactoe.png
+    src: /assets/img/project/execution_enginer.png
     alt: 
   date: March-April 2026
   description: Implemented a query execution engine in Rust that answers SQL queries over multi-gigabyte tables under a hard 64 MB address-space cap, single-threaded and with all filesystem writes disabled. Designed the operator pipeline and buffer management to stream results back to the monitor while minimising block reads and writes, scored directly on the simulator's estimated disk time 
@@ -53,26 +53,26 @@
   date: March 2026
   description: Built a LoRA-tuned Qwen2.5-1.5B relation classifier for 5 languages. Used a staged curriculum of language-adaptive pretraining on unlabelled Indic corpora followed by task tuning on upsampled Indic data. Reframed generative extraction as label-ID prediction under greedy decoding to eliminate hallucinated labels, trained with interleaved LM and task loss to gain coverage of all four Indian languages. Designed a training-free in-context learning pipeline on Llama-3.1-8B using a two-block prompt with a byte-identical ontology prefix for vLLM prefix caching
   links:
-    code: 
+    code: https://github.com/adityaaa2511/COL772-Natural-Language-Processing
     demo:
     blog: 
     report:
 
 - title: Policy Optimization Algrithms from scratch
   image:
-    src: /assets/img/project/tictactoe.png
+    src: /assets/img/project/TRPO.png
     alt: 
   date: March 2026
   description: Implemented Natural Policy Gradient, TRPO, and Conservative Policy Iteration from first principles in PyTorch, building TRPO's conjugate-gradient solver, Fisher-vector products, and KL-constrained backtracking line search without RL libraries — then benchmarked the from-scratch TRPO against sb3-contrib on Hopper-v4 and HalfCheetah-v4 across 3 seeds.
   links:
-    code: https://github.com/Spandan2003/tic-tac-toe-game
-    demo: /assets/img/project/tictactoe_video.mp4
+    code: https://github.com/adityaaa2511/AIL841-Advanced-Reinforcement-Learning
+    demo: 
     blog: 
     report:
 
 - title: Training and Sampling from DDPM & DDIM
   image:
-    src: /assets/img/project/vangogh.png
+    src: /assets/img/project/Diffusion_Model.png
     alt: 
   date: March 2026
   description: Implemented DDPM and DDIM from scratch in PyTorch, incorporating sinusoidal time embeddings, residual denoising networks, and iterative reverse diffusion for generative modeling. Conducted quantitative evaluation across variance schedules using mode coverage, Mahalanobis-distance analysis, and deterministic DDIM sampling with varying inference steps
@@ -84,19 +84,19 @@
 
 - title: Byte-Pair Encoding Tokenizer
   image:
-    src: /assets/img/project/EE224.png
+    src: /assets/img/project/Tokenizer.png
     alt: 
   date: February 2026
   description: Built a Byte-Pair Encoding tokenizer from scratch for Devanagari text, including iterative digram-merge vocabulary construction and deterministic tie-breaking; benchmarked on compression ratio, OOV rate, and token-frequency distribution to tune vocabulary size to 40,000 tokens
   links: 
-    code: 
-    demo: /assets/img/project/EE224.mp4
-    model: https://circuitverse.org/users/174878/projects/elevator-82124d01-db64-422b-ae44-1a3ed5a752ea 
-    report: /assets/pdf/project/PH567.pdf
+    code: https://github.com/adityaaa2511/COL772-Natural-Language-Processing
+    demo: 
+    model: 
+    report: 
 
 - title: Decoder-only Transformer
   image:
-    src: /assets/img/project/deepcarlsen.png
+    src: /assets/img/project/decoder.png
     alt: 
   date: December 2025
   description: Constructed a decoder-only Transformer from scratch in PyTorch, including multi-head causal self-attention, sinusoidal positional encodings, residual connections, and LayerNorm. Trained on TinyStories Dataset using FastTest embeddings, mixed-precision (AMP), gradient accumulation, cosine LR schedule and perplexity-based evaluation. Built an efficient autoregressive generation pipeline with KV-cache, temperature & top-k sampling, and beam search, enabling fast text decoding and coherent story generation
@@ -108,10 +108,10 @@
 
 - title: Dense Retrieval and Query Reformulation for Information Retrieval
   image:
-    src: /assets/img/project/EE224.png
+    src: /assets/img/project/BERT.png
     alt: 
   date: November 2025
-  description: Developed and evaluated sparse BM25, BERT/ELECTRA cross-encoders, and DistilBERT bi-encoder retrieval pipelines on the MS MARCO dataset, analyzing accuracy–latency trade-offs. Implemented query reformulation using T5-based generative expansion and CEQE-based contextualized pseudo-relevance feedback, with coordinate-ascent hyperparameter tuning. Tuned BM25 and RM3 on the CORD-19 corpus, achieving a ~22% improvement in F1@10 over the original BM25 baseline and outperforming the transformer-based reformulation methods.
+  description: Evaluated sparse BM25, BERT/ELECTRA cross-encoders, and DistilBERT bi-encoder retrieval pipelines on the MS MARCO dataset, analyzing accuracy–latency trade-offs. Implemented query reformulation using T5-based generative expansion and CEQE-based contextualized pseudo-relevance feedback, with coordinate-ascent hyperparameter tuning. Tuned BM25 and RM3 on the CORD-19 corpus, achieving a ~22% improvement in F1@10 over the original BM25 baseline and outperforming the transformer-based reformulation methods.
   links: 
     code: https://github.com/adityaaa2511/COL764-Information-Retrieval-and-Web-Search
     demo: 
@@ -120,10 +120,10 @@
 
 - title: Deep Reinforcement Learning - DDQN, REINFORCE, Actor-Critic 
   image:
-    src: /assets/img/project/EE224.png
+    src: /assets/img/project/Actor-Critic.png
     alt: 
   date: November 2025
-  description: Implemented DQN and Double DQN on LunarLander-v3 to analyze Q-value overestimation bias, demonstrating how Double DQN reduces bias by decoupling action selection and evaluation. Analyzed REINFORCE gradient variance using no-baseline, average-reward, reward-to-go, and learned value-function baselines, finding the value-function baseline produced the smallest gradient estimates and tighter variance. Compared PPO, A2C, Actor-Critic, and DQN across continuous-control and LunarLander environments, finding PPO more stable/sample-efficient and DQN faster to converge (6.3 vs. 13.7 min).
+  description: Implemented DQN and Double DQN on LunarLander-v3 to analyze Q-value overestimation bias, demonstrating how Double DQN reduces bias by decoupling action selection and evaluation. Analyzed REINFORCE gradient variance using no-baseline, average-reward, reward-to-go, and learned value-function baselines, finding the value-function baseline produced the smallest gradient estimates and tighter variance. Compared PPO, A2C, Actor-Critic, and DQN across continuous-control and LunarLander environments, finding PPO more stable/sample-efficient and DQN faster to converge (6.3 vs 13.7) min.
   links: 
     code: https://github.com/adityaaa2511/AIL-722-Reinforcement-Learning
     demo: 
@@ -132,7 +132,7 @@
 
 - title: Silhouette Tunnel Based Hand Gesture Authentication
   image:
-    src: /assets/img/project/EE224.png
+    src: /assets/img/project/ELL.png
     alt: 
   date: October - November 2025
   description: Developed a depth-based hand gesture authentication system using Silhouette Tunnel, covariance descriptors, temporal hierarchy, and depth-based morphology features. Proposed a Multi-Scale Silhouette Tunnel (MS-ST) descriptor across 3 spatial scales, achieving ~21% average EER reduction with Numba-accelerated covariance computation.
@@ -144,7 +144,7 @@
 
 - title: Neural Text Ranking - Retrieve-and-Rerank
   image:
-    src: /assets/img/project/EE224.png
+    src: /assets/img/project/Retrieve-rerank.png
     alt: 
   date: October 2025
   description: Implemented a retrieve-and-rerank information retrieval pipeline on the TREC DL Hard dataset using BM25 and transformer-based cross-encoders including BERT, MiniLM, ELECTRA, and monoT5. Conducted a systematic comparison across NDCG@1/5/10 and MRR@10, analyzing the impact of retrieval depth and model size; ELECTRA achieved the best baseline performance with 0.514 NDCG@1 and 0.712 MRR@10. Designed a multi-stage BM25 → MiniLM-L12 → Top-20 → ELECTRA reranking pipeline, improving MRR@10 from 0.7111 to 0.7155 and NDCG@10 from 0.4072 to 0.4096.
@@ -152,12 +152,12 @@
     code: https://github.com/adityaaa2511/COL764-Information-Retrieval-and-Web-Search
     demo: 
     model:  
-    report: assets/pdf/project/COL764_Assignment3.pdf
+    report: /assets/pdf/project/COL764_Assignment3.pdf
 
 
 - title: Deep Reinforcement Learning for Distribution Shift & Portfolio Optimization
   image:
-    src: /assets/img/project/EE224.png
+    src: /assets/img/project/Q-network.png
     alt: 
   date: October 2025
   description: Constructed Deep Q-Networks (DQN) with linear and non-linear Q-networks, experience replay, target networks, and ε-greedy exploration, evaluating generalization under distribution shift in a modified Cliff Walking environment. Implemented Deep SARSA with neural Q-function approximation and on-policy experience replay for Lunar Lander-v2, achieving a mean reward of 278.5 ± 19 over 100 evaluation episodes. Applied DQN to portfolio optimization, comparing final-wealth maximization against a risk-aware objective across 100 seeds; the risk-aware agent achieved 72.865 mean final wealth with 15.53 std., versus 65 with 16.8 std. for final-wealth maximization.
@@ -165,11 +165,11 @@
     code: https://github.com/adityaaa2511/AIL-722-Reinforcement-Learning
     demo: 
     model: 
-    report: assets/pdf/project/AIL722_Assignment3.pdf
+    report: /assets/pdf/project/AIL722_Assignment3.pdf
 
 - title: Concurrent Network Server from Scratch
   image:
-    src: /assets/img/project/EE224.png
+    src: /assets/img/project/Server.png
     alt: 
   date: December 2024
   description: Built event-driven TCP servers in C++ directly on the POSIX sockets API, using epoll with non-blocking sockets and a worker thread pool to serve many concurrent clients from a single accept loop. Implemented a per-connection state machine that buffers partial reads and resumes interrupted writes on EAGAIN/EWOULDBLOCK, so no client blocks the event loop, along with HTTP response handling and a remote command-execution service with credential-based authentication
@@ -181,7 +181,7 @@
 
 - title: Time Series Classification via Image Encodings
   image:
-    src: /assets/img/project/nlp_llm.png
+    src: /assets/img/project/Time_series.png
     alt: 
   date: January 2024
   description: Encoded univariate time series as 2D images to make them tractable for convolutional models, comparing Gramian Angular Fields against Markov Transition Fields on the UCR GunPoint dataset. The GAF encoding reached 98.7% test accuracy against 88.0% for MTF, indicating that the angular representation preserves more discriminative temporal structure on this task

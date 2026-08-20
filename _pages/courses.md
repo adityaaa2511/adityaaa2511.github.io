@@ -63,9 +63,8 @@ navpos: 3
     </div>  
     <ul>
         <li>SQL, Functional Dependencies</li>
-        <li>Database Implementations</li>
-        <li>Indexing, Query Processing</li>
-        <li>Query Optimisation, Transactions</li>
+        <li>Database Implementations, Indexing</li>
+        <li>Query Processing, Query Optimisation, Transactions</li>
     </ul>
     </p>
     <br>
@@ -180,8 +179,7 @@ navpos: 3
         <li>Proofs, Well Ordering Principle</li>
         <li>Mathematical Induction, Recursion</li>
         <li>Graph Theory, Infinite Sets, Partial Orders</li>
-        <li>Asymptotes, Generating Functions</li>
-        <li>Number Theory</li>
+        <li>Asymptotes, Generating Functions, Number Theory</li>
     </ul>
     </p>
     <br>
@@ -197,7 +195,7 @@ navpos: 3
         <li>Greedy Algorithms, Divide and Conquer</li>
         <li>Dynamic Programming, Segment Trees</li>
         <li>Graph Traversals - Topo Sort, Shortest Paths, MST, DSU, SCCs</li>
-        <li>Network Flows, P,NP,NP-complete problems</li>
+        <li>Network Flows, P, NP, NP-complete problems</li>
     </ul>
     </p>
     <br>
