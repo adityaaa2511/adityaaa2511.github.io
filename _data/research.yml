@@ -1,7 +1,7 @@
 - title: Analysing Multiphase Flows using Graph Neural Networks
   guide: <a href="https://web.iitd.ac.in/~pnair/">Prof. Prapanch Nair</a>
   image:
-    src: /assets/img/project/EE224.png
+    src: /assets/img/research/SURA.jpg
     alt: 
   date: January - December 2024
   description: Developed a Graph Neural Network (GNN) framework to model spatiotemporal evolution of multiphase flows using CFD-generated simulation data. Represented packed-bed flow domains as Voronoi-based graphs, encoding fluid volume fractions as node features and relative spatial coordinates as edge features. Designed and optimized GCN/GAT architectures with learned edge encoders, achieving 90%+ training accuracy for force-chain classification. Formulated multiphase-flow prediction as a spatiotemporal regression task using log-cosh loss, and evaluated the model’s ability to generalize across temporal steps and larger flow domains.
@@ -10,17 +10,4 @@
     demo: 
     model: 
     report: /assets/pdf/research/SURA_Proposal.pdf
-
-- title: Detection and Mitigation of Hallucination in LegalLLM
-  guide: <a href="https://www.cse.iitb.ac.in/~pb/">Prof. Pushpak Bhattacharyya</a>, <a href="https://www.iitb.ac.in/">IIT Bombay </a>
-  image:
-    src: /assets/img/research/legalllm.png
-    alt: 
-  date: July '24 - May '25
-  description: Developed a high-precision legal advisory chatbot to provide accurate answers while addressing the issue of AI-generated inaccuracies, known as hallucinations. Used advanced techniques to improve factual reliability, including better information retrieval and response validation, ensuring credible and trustworthy outputs.
-  links:
-    code:
-    demo: www.cfilt.iitb.ac.in/consumer_chatbot
-    blog: 
-    report: /assets/pdf/research/chatbot.pdf
 
