@@ -18,7 +18,7 @@ social: false # includes social icons at the bottom of the page
 
 Hello there, I am Aditya Saxena. Since my childhood, I have been curious about machines; how they work and how they are developed. This led me to study Computational Mechanics & Computer Science at IIT Delhi. When I entered college in Nov '22, I witnessed the launch of ChatGPT- OpenAI's flagship AI model at the time. Its ability to understand instuctions, solve problems and read multiple modalities really fascinated me and from here, my journey of learning AI and ML began.
 
-My current interests revolve around Natural Language Processing, Multimodal LLMs and Reinforcement learning particularly:- Multilingual NLP, VLMs, RL post-training and AI agents. I am also exploring Automatic Speech Recognition, Text-to-Speech models and Quantum Computing. One can find me at cafes or coffee shops reading about such stuff.
+My research interests revolve around Natural Language Processing, Multimodal LLMs and Reinforcement learning particularly:- Multilingual NLP, VLMs, RL post-training and AI agents. More recently, I am also exploring alignment safety and mechanistic interpretability. One can find me at cafes or coffee shops reading about such stuff.
 
 Outside academics, I’ve always strived to keep life vibrant. I enjoy the intensity of sports like:- Football and Formula 1, the escapism of novels and books, and the imagination of anime. These interests keep me grounded and creative, reminding me that learning doesn’t only happen in classrooms or labs.
 

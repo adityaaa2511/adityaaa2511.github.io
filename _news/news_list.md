@@ -4,6 +4,10 @@
 <table>
   <tr>
     <th>August 2026</th>
+    <td>Started full-time employement at IBM Research as a Research Engineer</td>
+  </tr>
+  <tr>
+    <th>August 2026</th>
     <td>Graduated from IIT Delhi with a BTech in Computational Mechanics and a minor in Computer Science. Secured 5th place in the Department Based on GPA</td>
   </tr>
   <tr>
