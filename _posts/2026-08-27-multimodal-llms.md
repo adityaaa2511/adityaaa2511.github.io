@@ -2,9 +2,11 @@
 layout: post
 title: "How Vision Language Models got their eyes"
 date: 2026-08-27 12:00:00 +0530
-description: My understanding of some foundational papers in Multimodal LLMs 
+description: My understanding of some foundational papers in Multimodal LLMs
 tags: [Multimodal LLMs, VLMs]
 comments: false
+_styles: >
+  .post-content h3, .post-content h4 { font-weight: 700; }
 ---
 
 ### Background
