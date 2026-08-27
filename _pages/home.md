@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Spandan Anaokar
+title: Aditya Saxena
 permalink: /
 description:
 
