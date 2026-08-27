@@ -6,10 +6,10 @@ description: My understanding of some foundational papers in Multimodal LLMs
 tags: [Multimodal LLMs, VLMs]
 comments: false
 _styles: >
-  .post-title { font-weight: 700; margin-bottom: 0.6rem; }
+  .post-title { font-weight: 500; margin-bottom: 0.75rem; }
   .post-meta { margin-top: 0.6rem; margin-bottom: 0.5rem; }
   .post-content h3, .post-content h4 { font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; }
-  .post-content p { line-height: 1.5; margin-bottom: 1.25rem; }
+  .post-content p { line-height: 1.75; margin-bottom: 1.25rem; }
 ---
 
 ### Background
