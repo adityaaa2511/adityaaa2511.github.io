@@ -74,3 +74,76 @@
 .work-text {
   overflow: hidden;
 }
+
+/*****************************************************************************
+* Blog
+*****************************************************************************/
+
+.blog-page {
+  margin-top: 1rem;
+}
+
+.blog-card {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid $grey-color-light;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.blog-card-date {
+  flex: 0 0 120px;
+  max-width: 120px;
+  text-align: center;
+  padding-right: 1.5rem;
+  padding-top: 0.15rem;
+
+  h6 {
+    color: var(--global-text-color-light);
+    font-size: 0.75rem;
+    margin: 0;
+  }
+}
+
+.blog-card-content {
+  flex: 1;
+}
+
+.blog-card-title {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+
+  a {
+    color: var(--global-text-color);
+    text-decoration: none;
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+}
+
+.blog-card-description {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+  margin: 0 0 0.4rem;
+}
+
+.blog-card-tags {
+  margin-top: 0.4rem;
+}
+
+.blog-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.1rem 0.55rem;
+  margin-right: 0.3rem;
+  border: 1px solid var(--global-text-color-light);
+  border-radius: 3px;
+  color: var(--global-text-color-light);
+}
