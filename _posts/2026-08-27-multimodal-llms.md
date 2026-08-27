@@ -17,20 +17,24 @@ This paper attempts to address the prevalant limitation of computer systems at t
 
 #### Constrative Pre-training Objective
 
-The obvious approach of associating (image,text) pairs is to jointly train an image feature extractor and a text transformer from scratch to predict the caption of the image. But, the authors suggest that this proves to be a difficult and inefficient task. Instead, they try to explore a potentially easier proxy task of pairing which (image,text) pair go together. Initially, the model (named CLIP) encodes N images into visual embeddings using a visual encoder (ViT/ResNet) and N captions into textual embeddings using a standard text transformer. Then, it attempts to learn a shared multi-modal embedding space by first linearly projecting each of the visual and textual embeddings into the shared embedding space and then maximising the cosine similarity between the correct N (image,text) embedding pairs and minimizing the similarity between the rest (N*N - N) embedding pairs. But, for computing the similarity, we require a single aggregated embedding for each image and each caption. This is obtained by taking the [CLS] embedding of the last layer of the ViT for the image and the [EOS] embedding of the last layer of the text transformer for the caption.   
+The obvious approach of associating (image,text) pairs is to jointly train an image feature extractor and a text transformer from scratch to predict the caption of the image. But, the authors suggest that this proves to be a difficult and inefficient task. 
+
+Instead, they try to explore a potentially easier proxy task of pairing which (image,text) pair go together. Initially, the model (named CLIP) encodes N images into visual embeddings using a visual encoder (ViT/ResNet) and N captions into textual embeddings using a standard text transformer. Then, it attempts to learn a shared multi-modal embedding space by first linearly projecting each of the visual and textual embeddings into the shared embedding space and then maximising the cosine similarity between the correct N (image,text) embedding pairs and minimizing the similarity between the rest (N*N - N) embedding pairs. 
+
+But, for computing the similarity, we require a single aggregated embedding for each image and each caption. This is obtained by taking the [CLS] embedding of the last layer of the ViT for the image and the [EOS] embedding of the last layer of the text transformer for the caption.   
 
 One nuance is that the paper uses a symmetric cross entropy loss function which accounts for matching every image with its associated text and every text with its associated image. 
 
 $$\mathcal{L} = \frac{1}{2}(\mathcal{L}_{I \to T} + \mathcal{L}_{T \to I})$$
 
-$$ where \mathcal{L}_{I \to T} and \mathcal{L}_{T \to I} are as follows:-$$
+where $$\mathcal{L}_{I \to T}$$ and $$\mathcal{L}_{T \to I}$$ are as follows:
 
 $$\mathcal{L}_{I \to T} = -\frac{1}{N} \sum_{i=1}^{N} \log \frac{\exp(\mathbf{I}_i \cdot \mathbf{T}_i / \tau)}{\sum_{j=1}^{N} \exp(\mathbf{I}_i \cdot \mathbf{T}_j / \tau)}$$
 
 $$\mathcal{L}_{T \to I} = -\frac{1}{N} \sum_{i=1}^{N} \log \frac{\exp(\mathbf{T}_i \cdot \mathbf{I}_i / \tau)}{\sum_{j=1}^{N} \exp(\mathbf{T}_i \cdot \mathbf{I}_j / \tau)}$$
 
-<figure>
-  <img src="/assets/img/blog/CLIP.png" alt="CLIP contrastive pre-training">
+<figure style="max-width: 520px; margin: 1.5rem auto;">
+  <img src="/assets/img/blog/CLIP.png" alt="CLIP contrastive pre-training" style="width: 100%;">
   <figcaption class="caption">Figure 1: CLIP's contrastive pre-training allows zero-shot transfer to unseen object categories at test-time.</figcaption>
 </figure>
 
