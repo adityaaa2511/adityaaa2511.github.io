@@ -49,9 +49,9 @@ The dataset used to train CLIP comprised of 400 million (image,text) pairs scrap
 
 The model computes the feature embeddings of the image and a set of possible captions/texts, calculates the cosine-similarity between the set of all possible pairs and the (image,text) with the highest similarity is predicted as the most probable pair.
 
-<hr style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
+<hr style="margin-top: 2.5rem; margin-bottom: 2.5rem; border: none; border-top: 1px solid var(--global-text-color-light);">
 
-### 2. Flamingo: a Visual Language model for Few Shot Learning (Alayrac et al. - 2022)
+### 2. Flamingo: a Visual Language model for Few Shot Learning (Alayrac et al. - Nov 2022)
 
 Flamingo attempts to leverage the power of pre-trained visual and language models, handle sequences of arbitrarily interleved image and textual data and seamlessly integrate images and video inputs.
 
@@ -62,7 +62,9 @@ Taking inspiration from the few-shot learning capabilities of GPT-3, the authors
   <figcaption class="caption">Figure 2: Flamingo architecture overview</figcaption>
 </figure>
 
-The main aspects that need understanding are the gated cross-attention layers and the perceiver resampler. The gated cross-attention layers are interleved with pre-initialized LM layers which provides an expressive way for autoregressive text generation conditioned on visual features. To ensure training stability, the architecture also incorporates tanh-gating (initialized at 0) so that the results of the initial forward pass match the results of the pretrained LM.
+#### 2.1 Gated cross-attention layers
+
+The gated cross-attention layers are interleved with pre-initialized LM layers which provides an expressive way for autoregressive text generation conditioned on visual features. To ensure training stability, the architecture also incorporates tanh-gating (initialized at 0) so that the results of the initial forward pass match the results of the pretrained LM.
 
 The keys and values in these layers are obtained from the visual features and the queries are derived from language inputs.
 
@@ -71,6 +73,8 @@ The keys and values in these layers are obtained from the visual features and th
   <figcaption class="caption">Figure 3: Gated Cross-attention layers interleved with LM layers to incorporate autogressive text generation conditioned on visual features</figcaption>
 </figure>
 
+#### 2.2 Perceiver Resampler
+
 The Perceiver Resampler reduces the complexity of vision-text cross attention by using a predefined number of latent vectors which learn to aggregate/extract visual information during training. The visual features obtained from the visual encoder are flattened and converted into keys and values. These are further concatenated with keys and values derived from the learned latent vectors. The queries are derived from the latent vectors. These are then passed into attention layers and the final output tokens (same in number to the latent vectors) are sent to the cross-attention layers.
 This results in a system indepedent of image resolution and no. of video frames.
 
@@ -78,6 +82,8 @@ This results in a system indepedent of image resolution and no. of video frames.
   <img src="/assets/img/blog/Perceiver_Resampler.png" alt="Perceiver Resampler" style="width: 100%;">
   <figcaption class="caption">Figure 4: The perceiver resampler maps a variable number of visual features into a fixed number of output tokens reducing complexity of vision-text cross-attention</figcaption>
 </figure>
+
+#### 2.3 Noteworthy Ablations
 
 Ablations studies indicate that freezing the LM layers prevents catastrophic forgetting and is computationally cheaper as there are no gradient updates from training on an additional dataset.
 
