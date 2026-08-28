@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How Vision Language Models got their eyes"
+title: "Evolution of Vision Language Models"
 date: 2026-08-27 12:00:00 +0530
 description: My understanding of some foundational papers in Multimodal LLMs
 tags: [Multimodal LLMs, VLMs]
@@ -8,7 +8,7 @@ comments: false
 _styles: >
   .post-title { font-weight: 500; margin-bottom: 0.75rem; }
   .post-meta { margin-top: 0.6rem; margin-bottom: 0.5rem; }
-  .post-content h3, .post-content h4 { font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; }
+  .post-content h3, .post-content h4 { font-weight: 500; margin-top: 2rem; margin-bottom: 0.75rem; }
   .post-content p { line-height: 1.75; margin-bottom: 1.25rem; }
 ---
 
@@ -20,7 +20,7 @@ Foundational models like:- ChatGPT, Claude and Gemini are inherently multimodal 
 
 This paper attempts to address the prevalant limitation of computer systems at that time to predict only a fixed set of categories on which system is trained. The authors say that this limits the generalizability and usability of such systems and learning directly from text associated with images is promising research direction to alleviate this limitation. So, they demonstrate that a simple pre-training task of associating which (image,text) pairs go together is an efficient and scalable way to learn image representations which can enable zero-shot downstream tasks. 
 
-#### Constrative Pre-training Objective
+#### Contrastive Pre-training Objective
 
 The obvious approach of associating (image,text) pairs is to jointly train an image feature extractor and a text transformer from scratch to predict the caption of the image. But, the authors suggest that this proves to be a difficult and inefficient task. 
 
