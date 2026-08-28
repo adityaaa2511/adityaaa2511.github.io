@@ -49,8 +49,39 @@ The dataset used to train CLIP comprised of 400 million (image,text) pairs scrap
 
 The model computes the feature embeddings of the image and a set of possible captions/texts, calculates the cosine-similarity between the set of all possible pairs and the (image,text) with the highest similarity is predicted as the most probable pair.
 
-<br>
+<hr style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
 
-### 2. Flamingo: a Visual Language model for Few Shot Learning
+### 2. Flamingo: a Visual Language model for Few Shot Learning (Alayrac et al. - 2022)
 
 Flamingo attempts to leverage the power of pre-trained visual and language models, handle sequences of arbitrarily interleved image and textual data and seamlessly integrate images and video inputs.
+
+Taking inspiration from the few-shot learning capabilities of GPT-3, the authors propose a novel architecture that achieves state-of-the-art results on a wide array of image and video related tasks; outperforming the current best methods which involve fine-tuning on thousands of annotated examples.
+
+<figure style="max-width: 520px; margin: 1.5rem auto;">
+  <img src="/assets/img/blog/Flamingo.png" alt="Flamingo architecture" style="width: 100%;">
+  <figcaption class="caption">Figure 2: Flamingo architecture overview</figcaption>
+</figure>
+
+The main aspects that need understanding are the gated cross-attention layers and the perceiver resampler. The gated cross-attention layers are interleved with pre-initialized LM layers which provides an expressive way for autoregressive text generation conditioned on visual features. To ensure training stability, the architecture also incorporates tanh-gating (initialized at 0) so that the results of the initial forward pass match the results of the pretrained LM.
+
+The keys and values in these layers are obtained from the visual features and the queries are derived from language inputs.
+
+<figure style="max-width: 520px; margin: 1.5rem auto;">
+  <img src="/assets/img/blog/xattn.png" alt="Flamingo cross-attention" style="width: 100%;">
+  <figcaption class="caption">Figure 3: Gated Cross-attention layers interleved with LM layers to incorporate autogressive text generation conditioned on visual features</figcaption>
+</figure>
+
+The Perceiver Resampler reduces the complexity of vision-text cross attention by using a predefined number of latent vectors which learn to aggregate/extract visual information during training. The visual features obtained from the visual encoder are flattened and converted into keys and values. These are further concatenated with keys and values derived from the learned latent vectors. The queries are derived from the latent vectors. These are then passed into attention layers and the final output tokens (same in number to the latent vectors) are sent to the cross-attention layers.
+This results in a system indepedent of image resolution and no. of video frames.
+
+<figure style="max-width: 520px; margin: 1.5rem auto;">
+  <img src="/assets/img/blog/Perceiver_Resampler.png" alt="Perceiver Resampler" style="width: 100%;">
+  <figcaption class="caption">Figure 4: The perceiver resampler maps a variable number of visual features into a fixed number of output tokens reducing complexity of vision-text cross-attention</figcaption>
+</figure>
+
+Ablations studies indicate that freezing the LM layers prevents catastrophic forgetting and is computationally cheaper as there are no gradient updates from training on an additional dataset.
+
+3 dataset mixing strategies were studied namely - data merged, round-robin and accumulation. Data merged involved constructing batches with a mixture of data from each dataset and round-robin entailed gradient updates seperately from batches of each dataset. However, the strategy of computing gradients from a batch of each dataset and using their weighted sum to update the parameters outperformed the previous methods.
+
+For a textual token, how many previous images to cross-attend on was another ablation and the authors found that attending on the latest previous image yielded better results. An explaination offered is that there is no explicit way of disambiguating between different images.
+They explored some ways of alleviate this by modifying image tags to include an index (image 1, image 2) or learning index embeddings but these were not robust enough to survive variation in image count during training and testing. 
