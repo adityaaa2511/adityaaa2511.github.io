@@ -113,11 +113,11 @@ It utilizes a 2-stage pretraining framework where the first stage focuses on vis
 
 This stage involves optimizing 3 objectives to ensure that the Q-former learns visual information most relevant to the text. 
 
-1) Image-Text Contrastive Learning (ITC) - This task entails the same contrastive learning optimization as in CLIP by maximising the similarity between the output query embeddings from Q-former and the [CLS] text embeddings from the BERT-like text transformer. Since the Q-former outputs contains multiple query embeddings, the papers computes the similarity with each query and then selects the highest one to optimize. A unimodal attention mask is utilized to facilitate this task.
+1) **Image-Text Contrastive Learning (ITC)** - This task entails the same contrastive learning optimization as in CLIP by maximising the similarity between the output query embeddings from Q-former and the [CLS] text embeddings from the BERT-like text transformer. Since the Q-former outputs contains multiple query embeddings, the papers computes the similarity with each query and then selects the highest one to optimize. A unimodal attention mask is utilized to facilitate this task.
 
-2) Image-Grounded Text Generative (ITG) - This task trains the model to generate texts given the input images as conditionals. For this, all of the information present in the image needs to be extracted by the query embeddings. So, the queries can attend to each other but not with the text embeddings while the text embeddings can interact with previous texts and with all the queries. This can be ensured with a multi-modal causal attention mask.
+2) **Image-Grounded Text Generative (ITG)** - This task trains the model to generate texts given the input images as conditionals. For this, all of the information present in the image needs to be extracted by the query embeddings. So, the queries can attend to each other but not with the text embeddings while the text embeddings can interact with previous texts and with all the queries. This can be ensured with a multi-modal causal attention mask.
 
-3) Image-Text Matching (ITM) - This tasks attempts to classify whether each image-text pair is positive (matching) or negative (unmatching) allowing the model to learn fine-grained alignment.
+3) **Image-Text Matching (ITM)** - This tasks attempts to classify whether each image-text pair is positive (matching) or negative (unmatching) allowing the model to learn fine-grained alignment.
 A bi-directional attention mask is utilized allowing all pair query-text interaction. A set of logits is derived from the output query embeddings using a linear classifier which are then averged to produce an output-matching score.
 
 <figure style="max-width: 520px; margin: 1.5rem auto;">
@@ -133,7 +133,7 @@ The paper experiments with 2 kinds of LLMs:- encoder-decoder and decoder-only. T
 
 <figure style="max-width: 520px; margin: 1.5rem auto;">
   <img src="/assets/img/blog/Stg2.png" alt="Q-Former" style="width: 100%;">
-  <figcaption class="caption">Figure 7: Stage 2 of the pretraining focuses on cross-modal alignment</figcaption>
+  <figcaption class="caption">Figure 7: Stage 2 of the pretraining focuses on cross-modal alignment. Q-former outputs are prepended with textual tokens before passing through the LLM</figcaption>
 </figure>
 
 <hr style="margin-top: 2.5rem; margin-bottom: 2.5rem; border: none; border-top: 1px solid var(--global-text-color-light);">
