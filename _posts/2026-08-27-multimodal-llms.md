@@ -43,3 +43,10 @@ $$\mathcal{L}_{T \to I} = -\frac{1}{N} \sum_{i=1}^{N} \log \frac{\exp(\mathbf{T}
   <figcaption class="caption">Figure 1: CLIP's contrastive pre-training allows zero-shot transfer to unseen object categories at test-time.</figcaption>
 </figure>
 
+#### Zero-shot Task Transfer
+
+The dataset used to train CLIP comprised of 400 million (image,text) pairs scraped from publically available sources on the internet. It is therefore safe to infer that the zero-shot transfer here means that the model is uitilized for a different task than the one it was  pre-trained on. Specifically, the pre-training task comprised of associating images and captions correctly with each other while at test-time the model can be used for object classification.
+
+The model first computes the feature embeddings of the image and a set of possible captions/texts, calculates the cosine-similarity of the set of all possible pairs and the image,caption/text with the highest similarity is predicted as the most probable pair.
+
+<br>
