@@ -85,9 +85,55 @@ This results in a system indepedent of image resolution and no. of video frames.
 
 #### 2.3 Noteworthy Ablations
 
-Ablations studies indicate that freezing the LM layers prevents catastrophic forgetting and is computationally cheaper as there are no gradient updates from training on an additional dataset.
+1) Ablations studies indicate that freezing the LM layers prevents catastrophic forgetting and is computationally cheaper as there are no gradient updates from training on an additional dataset.
 
-3 dataset mixing strategies were studied namely - data merged, round-robin and accumulation. Data merged involved constructing batches with a mixture of data from each dataset and round-robin entailed gradient updates seperately from batches of each dataset. However, the strategy of computing gradients from a batch of each dataset and using their weighted sum to update the parameters outperformed the previous methods.
+2) 3 dataset mixing strategies were studied namely - data merged, round-robin and accumulation. Data merged involved constructing batches with a mixture of data from each dataset and round-robin entailed gradient updates seperately from batches of each dataset. However, the strategy of computing gradients from a batch of each dataset and using their weighted sum to update the parameters outperformed the previous methods.
 
-For a textual token, how many previous images to cross-attend on was another ablation and the authors found that attending on the latest previous image yielded better results. An explaination offered is that there is no explicit way of disambiguating between different images.
+3) For a textual token, how many previous images to cross-attend on was another ablation and the authors found that attending on the latest previous image yielded better results. An explaination offered is that there is no explicit way of disambiguating between different images.
 They explored some ways of alleviate this by modifying image tags to include an index (image 1, image 2) or learning index embeddings but these were not robust enough to survive variation in image count during training and testing. 
+
+<hr style="margin-top: 2.5rem; margin-bottom: 2.5rem; border: none; border-top: 1px solid var(--global-text-color-light);">
+
+### 3. BLIP-2: Bootstrapping Language-Image Pretraining with Frozen Image Encoders and Language Models (Li et al. - Jun 2023)
+
+BLIP-2 positions itself as an effective and efficient way to leverage the capabilities of Frozen Image encoders and LLMs instead of end-to-end pretraining which is more compute and memory intensive. The main problem is to ensure cross-modal alignment for which they propose a Querying Transformer.
+
+#### 3.1 Q-Former Architecture
+
+Q-former employes learnable query vectors, acting a information bottleneck and feeding only the most relevant visual features to the LLM. It comprises of 2 transformer submodules that share the same self-attention layers. One of them is an vision transformer which interacts with the frozen image encoder for visual feature extraction. A text transformer is the other submodule.
+
+It utilizes a 2-stage pretraining framework where the first stage focuses on visual-language representation learning, allowing the model to learn visual features most relevant to the text. The second stage focuses on making the output visual representations of the Q-former interpretable for the LLM.
+
+<figure style="max-width: 520px; margin: 1.5rem auto;">
+  <img src="/assets/img/blog/Q-Former.png" alt="Q-Former" style="width: 100%;">
+  <figcaption class="caption">Figure 5: Objectives for stage 1 of pretraining and architecture of the Querying Transformer</figcaption>
+</figure>
+
+#### 3.2 Stage I: Vision-Language Representation Learning 
+
+This stage involves optimizing 3 objectives to ensure that the Q-former learns visual information most relevant to the text. 
+
+1) Image-Text Contrastive Learning (ITC) - This task entails the same contrastive learning optimization as in CLIP by maximising the similarity between the output query embeddings from Q-former and the [CLS] text embeddings from the BERT-like text transformer. Since the Q-former outputs contains multiple query embeddings, the papers computes the similarity with each query and then selects the highest one to optimize. A unimodal attention mask is utilized to facilitate this task.
+
+2) Image-Grounded Text Generative (ITG) - This task trains the model to generate texts given the input images as conditionals. For this, all of the information present in the image needs to be extracted by the query embeddings. So, the queries can attend to each other but not with the text embeddings while the text embeddings can interact with previous texts and with all the queries. This can be ensured with a multi-modal causal attention mask.
+
+3) Image-Text Matching (ITM) - This tasks attempts to classify whether each image-text pair is positive (matching) or negative (unmatching) allowing the model to learn fine-grained alignment.
+A bi-directional attention mask is utilized allowing all pair query-text interaction. A set of logits is derived from the output query embeddings using a linear classifier which are then averged to produce an output-matching score.
+
+<figure style="max-width: 520px; margin: 1.5rem auto;">
+  <img src="/assets/img/blog/Masks.png" alt="Masks" style="width: 100%;">
+  <figcaption class="caption">Figure 6: Attention Masks for each objective</figcaption>
+</figure>
+
+#### 3.3 Stage II: Vision-to-Language Generative Learning
+
+The second stage involves training a linear projector that sends the Q-formers learned output vectors as soft visual inputs to the LLM. Since the Q-former is extensively trained to learn cross-modal representations in stage I, there is less burden on the LLM to learn cross-modal alignment now. 
+
+The paper experiments with 2 kinds of LLMs:- encoder-decoder and decoder-only. The decoder-only version uses language modelling loss to generate visual conditioned text. The encoder-decoder uses a prefix language modelling loss, where the the target is suffix prediction using a prefix text and the visual queues. 
+
+<figure style="max-width: 520px; margin: 1.5rem auto;">
+  <img src="/assets/img/blog/Stg2.png" alt="Q-Former" style="width: 100%;">
+  <figcaption class="caption">Figure 7: Stage 2 of the pretraining focuses on cross-modal alignment</figcaption>
+</figure>
+
+<hr style="margin-top: 2.5rem; margin-bottom: 2.5rem; border: none; border-top: 1px solid var(--global-text-color-light);">
