@@ -128,7 +128,7 @@ This stage involves optimizing 3 objectives to ensure that the Q-former learns v
 
 The second stage involves training a linear projector that sends the Q-formers learned output vectors as soft visual inputs to the LLM. Since the Q-former is extensively trained to learn cross-modal representations in stage I, there is less burden on the LLM to learn cross-modal alignment now. 
 
-The paper experiments with 2 kinds of LLMs:- encoder-decoder and decoder-only. The decoder-only version uses language modelling loss to generate visual conditioned text. The encoder-decoder uses a prefix language modelling loss, where the the target is suffix prediction using a prefix text and the visual queues. 
+The paper experiments with 2 kinds of LLMs:- encoder-decoder and decoder-only. The decoder-only version uses language modelling loss to generate visually conditioned text. The encoder-decoder uses a prefix language modelling loss, where the the target is suffix prediction using a prefix text and the visual queues. 
 
 <figure style="max-width: 520px; margin: 1.5rem auto;">
   <img src="/assets/img/blog/Stg2.png" alt="Q-Former" style="width: 100%;">
@@ -136,3 +136,58 @@ The paper experiments with 2 kinds of LLMs:- encoder-decoder and decoder-only. T
 </figure>
 
 <hr style="margin-top: 2.5rem; margin-bottom: 2.5rem; border: none; border-top: 1px solid var(--global-text-color-light);">
+
+### 4. Visual Instruction Tuning (Liu et al. - Dec 2023)
+
+This paper attempts to extend instruction-tuning to vision-language multimodal space. Key contributions include a creating a pipeline for converting (image,text) pairs into an instruction-following dataset and a large multimodal model which is fine-tuned end-to-end on the resultant dataset named LLaVa.
+
+#### 4.1 Visual Instruction Dataset Generation
+
+For vision-language Q/A, the amount of data is limited and there is no well-defined procedure for curating such a dataset. Thus, the authors propose to leverage LLMs to create a set questions (Xq) for each image (Xv) and its associated caption (Xc). The pair is then expanded as follows:- 
+
+Human: $$\mathcal{X}_{q}$$ $$\mathcal{X}_{v}$$ [STOP] Assistant: $$\mathcal{X}_{c}$$ [STOP]
+
+But this expanded version lacks diversity in both instructions and responses. To mitigate this issue the authors propose to leverage GPT-4 to create a diverse dataset for instruction-following based on the visual content. But, GPT-4 accepts only text as input so, the image is preprocessed into the following symbolic representations:- 
+
+1) **Captions** - These describe the visual scene from different perspectives
+
+2) **Bounding Boxes** - These localize the objects and provide their context and spatial locations
+
+Using these symbolic representations for images as input to GPT-4, they generate 3 kinds of instruction following data:-
+
+1) **Conversations** - These include questions based on the image which have definite answers like:- object type, object count, object locations etc.
+
+2) **Descriptions** - To allow a comprehensive understanding of the images, a list of questions and their target descriptions are retrieved from the LLM.
+
+3) **Reasoning** - The earlier questions were based on visual content so, the authors included some questions which required step-by-step reasoning backed by logic to get to the deduced answer.
+
+<figure style="max-width: 520px; margin: 1.5rem auto;">
+  <img src="/assets/img/blog/Instruction-data.png" alt="Instruction-Dataset" style="width: 100%;">
+  <figcaption class="caption">Figure 8: Examples of the curated Instruction-following Dataset</figcaption>
+</figure>
+
+#### 4.2 Visual Instruction Tuning
+
+##### 4.2.1 Architecture
+
+The visual features obtained from the pretrained vision encoder from CLIP are passed through a linear projection layer to facilitate cross-modal alignment. The visual features then become interpretable for the LLM and are passed as visual tokens in the prompt.
+
+<figure style="max-width: 520px; margin: 1.5rem auto;">
+  <img src="/assets/img/blog/LLaVa.png" alt="LLaVa" style="width: 100%;">
+  <figcaption class="caption">Figure 9: LLaVa Architecture</figcaption>
+</figure>
+
+##### 4.2.2 Training
+
+The paper adopts a 2-stage training framework which optimizes the standard language modeling loss but, the conditionals include visual, instruction and previous answer tokens.
+
+**Stage I** - This stage aims to improve the feature alignment between the visual features and the LLM word embeddings. The expanded format from section 4.1 is considered for training where the (image,captions) comes from the CC3M dataset and the questions/instructions are LLM generated. During training, the weights of the visual encoder & LLM are fixed while the weights of the projection layer are optimized.
+
+**Stage II** - The visual encoder remains frozen in this stage while the projection layer and LLM are fine-tuned. The dataset consists of the instruction-following data created using the suggested methodology in section 4.1. There are 58K samples for Q/A, 23K samples for descriptions and 77K samples for deductive reasoning tasks which are sampled uniformly during training.
+
+Ablation studies indicate that visual features from the penultimate layer of the image-encoder give better results. A proposed explaination is that the penultimate layers focuses more on local propoerties rather than on the global and abstract image properties.
+
+Skipping pre-training leads to worse metrics indicating the importance of cross-modal alignment and explicitly asking the model to produce CoT reasoning before the final answer improves convergence.
+
+<hr style="margin-top: 2.5rem; margin-bottom: 2.5rem; border: none; border-top: 1px solid var(--global-text-color-light);">
+
