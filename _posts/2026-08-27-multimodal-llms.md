@@ -191,3 +191,30 @@ Skipping pre-training leads to worse metrics indicating the importance of cross-
 
 <hr style="margin-top: 2.5rem; margin-bottom: 2.5rem; border: none; border-top: 1px solid var(--global-text-color-light);">
 
+### Qwen2-VL: Enhancing Vision Language Model's Perception of the World at any Resolution (Wang et al. - Oct 2024)
+
+The technical report of this model succintly describes the existing limitations in LVLMs and suggests techniques to improve their existing capabilities. The authors introduce dynamic resolution training to allow the models to process images with varied resolutions resulting in enhanced visual representations which are necessary for tasks such as OCR, UI interaction and other video-related benchamrks. They also include Multimodal Rotary Positional Embeddings (M-Rope) during pre-training which instill multi-dimensional information (temporal and 2D-spatial) for better understanding of inputs with texts, images and videos combined.
+Below is a more detailed description of these techincal improvements.
+
+#### Dynamic Resolution
+
+Tasks such as optical character recognition (OCR), UI interaction and live chatting require the model to have a good knowledge and understanding of information avaialble from different scales. Previous methods which encode images to fit a specific aspect ratio or resolution produce a fixed number of visual tokens which are not well-suited for these tasks, leading to a significant loss of information in high-resolution images. To alleviate this issue, the paper introduces dynamic resolution processing which provides the ability to work with images of varied resolution, producing a dynamic number of visual tokens.
+
+To support this feature, the paper utilizes 2D-Rotary Positional Embeddings (2D-Rope) in the ViT instead of the absolute positional embeddings to capture the 2D-spatial information of the image. At inference time, all the visual tokens from different images are packed into a 1D sequence as input for the LLM. To control the number of visual tokens produced, a single MLP layer is employed after the ViT to adjacent 2*2 image tokens to convert them into a single token. Once this is done, the final sequence is padded with <|vision_start|> and <|vision_end|> before sending it for further processing.
+
+Ablation studies indict that this architectural nuance produces fewer image tokens on average and perturbing the image size slightly leads to a similar deviation in performance highlighting the models robustness to varied image sizes.
+
+#### Multimodal Rotary Positional Embeddings 
+
+Unlike LLMs, LVLMs need to have a good grasp of the information present in images and videos which is inherently multi-dimensional in nature as compared to text which is one-dimensional. To bridge this gap, the authors developed Multimodel Rotary Positional Embeddings which utilize seperate components to represent text,images and videos enabling the model to comprehend dynamic multi-dimensional content. This is achieved by deconstructing the original embeddings into 3 components:-  temporal, height and width. So, text tokens have the same height and width component which makes these identical to 1D positional embeddings. Image tokens have same temporal component while height and width component differs for each token and videos can be interpreted as a sequence of images which have incremental value of the temporal component. In scenarios where the models input emcompasses multiple modalities, the positional embedding of the next modalitiy is intialized by (max positional embeddings value of the previous modality + 1).
+
+Ablations done for this architecture improvement show better performance for downstreams tasks espacially video-related tasks. Morever, the model is fairly robust to the length extrapolation capability of M-Rope allowing exceptional accuracy for larger inference length inputs.
+
+#### Training
+
+The first stage of pre-training focuses exclusively on training the ViT to learn image-text relationships, OCR and image classification. The second-stage unfreezes all parameters and introduces a higher volume of mixed image-text content, multitask datasets and visual question-answering datasets refining the models capacity to respond to image related queries and have a more nuanced understanding of the image-text interplay. The final instruction-tuning phase employs multimodal conversational data to enhance the models capability to follow a wide range of instructions across different modalities.
+
+<figure style="max-width: 520px; margin: 1.5rem auto;">
+  <img src="/assets/img/blog/Qwen.png" alt="LLaVa" style="width: 100%;">
+  <figcaption class="caption">Figure 10: Qwen Architecture</figcaption>
+</figure>
