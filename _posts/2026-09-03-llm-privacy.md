@@ -21,7 +21,7 @@ AI safety has gained significant traction in the last couple of years and this p
 
 From the list of theoretically provable methods for preventing private data leakage, training models with Differential Privacy (DP) is the de-facto standard. The standard algorithm for this is DP-SGD which involves clipping the per-sample gradient norms to ensure bounded contribution from each data point and further adding gaussian noise to each per-sample clipped gradient during loss aggregation so that the contribution from a data point cannot be traced back using its gradients. The clipping threshold is a hyperparameter and the standard distribution of the gaussian distribution is selected such that the algorithm satisfies (ε, δ)-Differential privacy. ε is the privacy budget which bounds how much a distirbution can shift if one record is added or removed  and δ is the failure probability accounting for a small chance that the ε-bound breaks.
 
-##### Differentially Private Fine-tuning
+#### Differentially Private Fine-tuning
 
 However straightforward approaches for leveraging DP-SGD during training have resulted in large performance drops on downstream NLP tasks and large computational overheads. [3] propose a meta-framework for utilizing DP with fine-tuning for mitigating the aformentioned issues. Specifically, the authors suggest augmenting extra parameters to the base model whose parameters remain frozen while the additional parameters are fine-tuned on a small, private dataset for the downstream task. This parameter-efficient approach works well under privacy constraints because the fine-tuned weights remain on a low-dimensional manifold close to the pre-trained weights, meaning the noise injected by DP-SGD does not destroy the knowledge learned during pre-training. 
 
@@ -29,7 +29,7 @@ However straightforward approaches for leveraging DP-SGD during training have re
 
 The authors also indicate that aligning the fine-tuning task of classification with the standard pretraining objective by modelling it as text infilling in :- "[INPUT]. It is [MASK].", the options being [AWESOME] and [TERRIBLE], leads to a 3-5% increment in evaluation metrics.
 
-##### Ghost Clipping
+#### Ghost Clipping
 
 The paper also describes a memory reduction technique called **Ghost Clipping** which alleviates the issue of instantiating a gigantic per-sample gradient matrix and instead leverages the input and activation gradients from a linear layer (both are available during the backward pass) to calculate the gradient norms
 
@@ -60,7 +60,7 @@ $$\sum_{i=1}^{B} c_i \mathcal{L}_i$$
 
 Because the gradient of this reweighted loss with respect to $$W$$ is exactly $$\sum_i c_i \nabla_W \mathcal{L}_i$$ — the correct sum of clipped gradients — Ghost Clipping avoids ever materialising the full $$p \times d$$ per-example gradient matrix while producing an identical result to standard DP-SGD clipping.
 
-##### Dynamic Text Sanitization at Inference Time
+#### Dynamic Text Sanitization at Inference Time
 
 The techniques mentioned above are best suited while pretraining LLMs or fine-tuning them for a downstream task. However, there exists research that shows LLMs can still leak sensitive information from user prompts and thus, there is a need to ensure privacy at inference time. [4] proposes DYNTEXT - Dynamic Text Sanitization which employs semantically-aware density information under DP for constructing a dynamic adjacency list for each token and then using a replacement mechanism for sanitization. 
 
@@ -130,11 +130,11 @@ $$
 
 Since $$ S_{f,\beta}(t) $$ is the maximum value of $$ LS_f(\hat{t}) $$, it is more sensitive to changes in local tokens allowing it to better preserve semantic information. Moreover, $$ \beta $$ can be used to regulate privacy. A larger $$ \beta $$ can decrease local sensitivity and thereby, preserve semantic information for tokens in high density regions by reducing the influence of distant tokens and a smaller $$ \beta $$ can allow distant tokens to contribute more for tokens in low density areas, enhancing privacy protection. 
 
-#### Text Sanitization 
+### Text Sanitization 
 
 Text Sanitization is the process of replacing sensitive data like private information (age, address, gender, occupation, family/health info etc.) with relatively less revealing tokens while maintaining text coherence and utility for downstream tasks.
 
-##### Zero-Shot Redaction and Substitution
+#### Zero-Shot Redaction and Substitution
 
 The first approach beyond rule-based processing utilizes a zero-shot redaction and subsitution framework as proposed by [5] . First, the document is preprocessed into tokens using a tokenizer consistent with the downstream LLM which is used for calculating the probability of occurence of each token by using Masked language modelling. If at a particular position, the probability of that tokens occurance is less than a threshold (set according to privacy requirements), then that token is flagged for substitution. In case a word consists of multiple tokens, the method starts by masking the suffix token and subsequently calculates the probability by moving towards the prefix. The final probability is the product of all such values.
 
@@ -142,7 +142,7 @@ Substitution for numerical tokens proceeds by replacing them with a value of sim
 
 This is certainly not an optimal method as a forward pass is required over each token which results in high latency and depends heavily on the prob. dist. given by the LLM. Niche terms and rare jargon might be falsely flagged and high prob. sensitive terms (like:- names, age) might evade the filtering criteria. Substitution based on embedding similarity also doesnt gaurentee privacy.
 
-##### Self-Disclosure Detection and Text Abstraction
+#### Self-Disclosure Detection and Text Abstraction
 
 The next approach for text anonymization could be to fine-tune an LLM to detect potentially sensitive information and then employ some sort of abstraction techniques in order to mask the sensitive information. However, for fine-tuning the LLM, we required annotated data. [6] solves this issue by proposing a detailed taxonomy of 19 self-disclosure categories obtained from public Reddit data and assigning labels to each instance of private information in this self-disclosure data. They select spans with contextual information instead of a single word for more nuanced training signals. For example, “I live in the US” would be preferred over a minimal span like “US”, which is isolated from its self-referential context. 
 
@@ -158,14 +158,14 @@ Fine-tuning is further performed using three methods:-
 
 Results indicate that 2) and 3) achieve the best performance when trained without CoT before answering. This may be because the goal is to perform simple text abstraction and not to solve complex problem for which multi-step reasoning is ill-suited. Elaboration and justification can reduce performance on metrics like:- BLEU, ROUGE and human-ranking which value directness and conciseness.
 
-##### Inferential Feedback for Text Sanitization
+#### Inferential Feedback for Text Sanitization
 
 As shown by approaches in the attack section, modern LLMs can be misused for high-accuracy predictions
 of personal attributes from seemingly non-revealing online posts. Existing methods for text anonymization are based on rules and named-entity recognition which don't account for inference derived from reasoning. As such, [7] propose to utilize the increasing inferencing capabilties of LLMs and employ them for text sanitization. Concretely, they present a framework in which an adversarial LLM is used to infer a set of attributes iteratively. The set of attributes that we want to obfuscate along with the text are sent to the adversarial LLM which gives feedback on which attributes it can infer from the current text. This feedback plus the text are sent to the anonymizer LLM which tries to adapt relevent spans according to the feedback. In round i, only the text sanitizated after round i-1 is given to the anonymizer and not all versions of modified text. When the adversarial LLM cannot infer anymore attributes or after a fixed number of rounds, this cycle of inferential feedback and sanitization is halted.
 
 The papers uses an LLM-as-a-judge to measure the downstream task utility and readability along with traditional metrics like:- BLEU and ROUGE-1 for evaluations. Ablations suggest that providing adversarial feedback is crucial for ensuring higher privacy and utility, which makes considerably larger improvements per round as compared to the case where adversarial feedback is not provided. 
 
-##### Utility-Preserving Text Anonymization
+#### Utility-Preserving Text Anonymization
 
 A concern about the previous approach is that though adversarial feedback obtained from LLM is helpful for obfuscation and privacy-preservation, the downstream task-utility is severly hampered due to over anonymization. For mitigating this issue, a robust utility-preserving framework is proposed by [8]. 
 
