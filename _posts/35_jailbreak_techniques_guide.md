@@ -1,3 +1,16 @@
+---
+layout: post
+title: "Examples of Templated Jailbreaks"
+date: 2026-10-17 12:00:00 +0530
+tags: [LLM Security, Jailbreaking, Red-Teaming]
+comments: false
+_styles: >
+  .post-title { font-weight: 500; margin-bottom: 0.75rem; }
+  .post-meta { margin-top: 0.6rem; margin-bottom: 0.5rem; }
+  .post-content h3, .post-content h4 { font-weight: 500; margin-top: 2rem; margin-bottom: 0.75rem; }
+  .post-content p { line-height: 1.75; margin-bottom: 1.25rem; }
+---
+
 # 35 Jailbreak Techniques
 
 *A beginner-friendly guide using source-matched prompt-template excerpts from the public StrongREJECT implementation*
