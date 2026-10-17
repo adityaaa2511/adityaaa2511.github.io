@@ -181,17 +181,17 @@ f_u(x_a) > f_u(x_b)
 \right)
 $$
 
-where \(f_p(\cdot)\) and \(f_u(\cdot)\) denote the privacy and utility objective functions, respectively and \(X_0\) denotes the set of all possible edits of \(x_0\).
+where \\(f_p(\cdot)\\) and \\(f_u(\cdot)\\) denote the privacy and utility objective functions, respectively and \\(X_0\\) denotes the set of all possible edits of \\(x_0\\).
 
 The framework has 3 components:-
 
-1) **Privacy Evaluator**:- An LLM instance whose job is assess the privacy protection levels, ensuring that private content is adequately obscured against re-identification. It generates top-K re-indentification results which are compared with their ground-truth label. If a match is found, the rank of the matched result is considered a privacy protection score \(p_t\). Further, the evaluator is prompted to provide natural language feedback \(f_t\), detailing the clues that led to the correct inference. If there is no match then \(p_t\) = K+1.
+1) **Privacy Evaluator**:- An LLM instance whose job is assess the privacy protection levels, ensuring that private content is adequately obscured against re-identification. It generates top-K re-indentification results which are compared with their ground-truth label. If a match is found, the rank of the matched result is considered a privacy protection score \\(p_t\\). Further, the evaluator is prompted to provide natural language feedback \\(f_t\\), detailing the clues that led to the correct inference. If there is no match then \\(p_t\\) = K+1.
 
-2) **Utility Evaluator**:- An LLM instance whose responsibility is to examine the downstream task utility of the anonymized text. Given the ground truth label c, the utility score \(u_t\) can be calculated using its logit following traditional uncertainty quantification methods.
+2) **Utility Evaluator**:- An LLM instance whose responsibility is to examine the downstream task utility of the anonymized text. Given the ground truth label c, the utility score \\(u_t\\) can be calculated using its logit following traditional uncertainty quantification methods.
 
-3) **LLM Optimizer**:- To ensure that the primary objective of achieving maximum privacy is prioritized over utility, the lexicographic-optimizer LLM operates in two different modes. When the privacy objective value has not yet reached the pre-set maximum K + 1, the lexicographic optimizer should focus on maximizing the privacy objective, which is achieved by taking the value of the meta-instruction variable as \(I_{pr}\) that instructs the LLM to further anonymize \(x_t\) according to textual feedback \(f_t\).
+3) **LLM Optimizer**:- To ensure that the primary objective of achieving maximum privacy is prioritized over utility, the lexicographic-optimizer LLM operates in two different modes. When the privacy objective value has not yet reached the pre-set maximum K + 1, the lexicographic optimizer should focus on maximizing the privacy objective, which is achieved by taking the value of the meta-instruction variable as \\(I_{pr}\\) that instructs the LLM to further anonymize \\(x_t\\) according to textual feedback \\(f_t\\).
 
-Once the privacy objective value has reached the maximum threshold, the meta instruction shifts to \(I_{ur}\), prompting the LLM to optimize the utility level without compromising the achieved privacy objective value.
+Once the privacy objective value has reached the maximum threshold, the meta instruction shifts to \\(I_{ur}\\), prompting the LLM to optimize the utility level without compromising the achieved privacy objective value.
 
 The iterative process continues until either the pre-defined maximum values for both objectives
 are reached or the maximum number of iterations T is met.
