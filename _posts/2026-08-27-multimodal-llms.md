@@ -2,7 +2,6 @@
 layout: post
 title: "Evolution of Vision Language Models"
 date: 2026-08-27 12:00:00 +0530
-description: My understanding of some foundational papers in Multimodal LLMs
 tags: [Multimodal LLMs, VLMs]
 comments: false
 _styles: >
@@ -218,3 +217,11 @@ The first stage of pre-training focuses exclusively on training the ViT to learn
   <img src="/assets/img/blog/Qwen.png" alt="LLaVa" style="width: 100%;">
   <figcaption class="caption">Figure 10: Qwen Architecture</figcaption>
 </figure>
+
+### References
+
+1. Radford, A. et al. (2021). [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020)
+2. Alayrac, J.B. et al. (2022). [Flamingo: a Visual Language Model for Few-Shot Learning](https://arxiv.org/abs/2204.14198)
+3. Li, J. et al. (2023). [BLIP-2: Bootstrapping Language-Image Pretraining with Frozen Image Encoders and Large Language Models](https://arxiv.org/abs/2301.12597)
+4. Liu, H. et al. (2023). [Visual Instruction Tuning](https://arxiv.org/abs/2304.08485)
+5. Wang, P. et al. (2024). [Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution](https://arxiv.org/abs/2409.12191)
