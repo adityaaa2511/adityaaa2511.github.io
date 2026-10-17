@@ -167,7 +167,38 @@ The papers uses an LLM-as-a-judge to measure the downstream task utility and rea
 
 #### Utility-Preserving Text Anonymization
 
-A concern about the previous approach is that though adversarial feedback obtained from LLM is helpful for obfuscation and privacy-preservation, the downstream task-utility is severly hampered due to over anonymization. For mitigating this issue, a robust utility-preserving framework is proposed by [8]. 
+A concern about the previous approach is that though adversarial feedback is helpful for obfuscation and privacy-preservation, the downstream task-utility is severly hampered due to over anonymization. For mitigating this issue, a robust utility-preserving framework is proposed by [8]. 
+
+The problem is formulated as Lexicographic optimization involving 2 competiting objectives:- privacy enhancement and utility preservation. Privacy enhancement is the primary objective; the framework prioritizes achieving a higher degree of privacy protection and only after that task utility preservation is optimized. Formally, a solution $x_a \in X_0$ is lexicographically preferable to another solution $x_b \in X_0$, denoted by $x_a \succ_{\mathrm{lex}} x_b$, if and only if:
+
+$$
+f_p(x_a) > f_p(x_b)
+\quad \text{or} \quad
+\left(
+f_p(x_a) = f_p(x_b)
+\;\text{and}\;
+f_u(x_a) > f_u(x_b)
+\right)
+$$
+
+where $f_p(\cdot)$ and $f_u(\cdot)$ denote the privacy and utility objective functions, respectively and $X_0$ denotes the set of all possible edits of $x_0$.
+
+The framework has 3 components:-
+
+1) **Privacy Evaluator**:- An LLM instance whose job is assess the privacy protection levels, ensuring that private content is adequately obscured against re-identification. It generates top-K re-indentification results which are compared with their ground-truth label. If a match is found, the rank of the matched result is considered a privacy protection score $p_t$. Further, the evaluator is prompted to provide natural language feedback $f_t$, detailing the clues that led to the correct inference. If there is no match then $p_t$ = K+1.
+
+2) **Utility Evaluator**:- An LLM instance whose responsibility is to examine the downstream task utility of the anonymized text. Given the ground truth label c, the utility score $u_t$ can be calculated using its logit following traditional uncertainty quantification methods.
+
+3) **LLM Optimizer**:- To ensure that the primary objective of achieving maximum privacy is prioritized over utility, the lexicographic-optimizer LLM operates in two different modes. When the privacy objective value has not yet reached the pre-set maximum K + 1, the lexicographic optimizer should focus on maximizing the privacy objective, which is achieved by taking the value of the meta-instruction variable as $I_pr$ that instructs the LLM to further anonymize $x_t$ according to textual feedback $f_t$.
+
+Once the privacy objective value has reached the maximum threshold, the meta instruction shifts to $I_ur$, prompting the LLM to optimize the utility level without compromising the achieved privacy objective value.
+
+The iterative process continues until either the pre-defined maximum values for both objectives
+are reached or the maximum number of iterations T is met.
+
+**Evaluation Metrics**:- The evaluation focuses on two critical aspects: disclosure risk and utility preservation. Disclosure risk is assessed by measuring the Success Rate (SR) of a state-of-the-art LLM in inferring personal information from anonymized text. Besides this, the LLM is prompted to generate the Confidence Scores (CS), evaluating the degree of confidence with which anonymized text can be linked to the ground-truth personal information.
+
+Utility preservation metrics are gauged by the performance of a BERT-based classifier finetuned on original train data and tested on the test data that is anonymized by RUPTA and other methods, including Accuracy, Precision, Recall, F1 Score, and the classifier’s loss function value indicating classification uncertainty. 
 
 <hr style="margin-top: 2.5rem; margin-bottom: 2.5rem; border: none; border-top: 1px solid var(--global-text-color-light);">
 
