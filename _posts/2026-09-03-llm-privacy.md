@@ -169,7 +169,7 @@ The papers uses an LLM-as-a-judge to measure the downstream task utility and rea
 
 A concern about the previous approach is that though adversarial feedback is helpful for obfuscation and privacy-preservation, the downstream task-utility is severly hampered due to over anonymization. For mitigating this issue, a robust utility-preserving framework is proposed by [8](#reference-8). 
 
-The problem is formulated as Lexicographic optimization involving 2 competiting objectives:- privacy enhancement and utility preservation. Privacy enhancement is the primary objective; the framework prioritizes achieving a higher degree of privacy protection and only after that task utility preservation is optimized. Formally, a solution $x_a \in X_0$ is lexicographically preferable to another solution $x_b \in X_0$, denoted by $x_a \succ_{\mathrm{lex}} x_b$, if and only if:
+The problem is formulated as Lexicographic optimization involving 2 competiting objectives:- privacy enhancement and utility preservation. Privacy enhancement is the primary objective; the framework prioritizes achieving a higher degree of privacy protection and only after that task utility preservation is optimized. Formally, a solution \(x_a \in X_0\) is lexicographically preferable to another solution \(x_b \in X_0\), denoted by \(x_a \succ_{\mathrm{lex}} x_b\), if and only if:
 
 $$
 f_p(x_a) > f_p(x_b)
@@ -181,17 +181,17 @@ f_u(x_a) > f_u(x_b)
 \right)
 $$
 
-where $f_p(\cdot)$ and $f_u(\cdot)$ denote the privacy and utility objective functions, respectively and $X_0$ denotes the set of all possible edits of $x_0$.
+where \(f_p(\cdot)\) and \(f_u(\cdot)\) denote the privacy and utility objective functions, respectively and \(X_0\) denotes the set of all possible edits of \(x_0\).
 
 The framework has 3 components:-
 
-1) **Privacy Evaluator**:- An LLM instance whose job is assess the privacy protection levels, ensuring that private content is adequately obscured against re-identification. It generates top-K re-indentification results which are compared with their ground-truth label. If a match is found, the rank of the matched result is considered a privacy protection score $p_t$. Further, the evaluator is prompted to provide natural language feedback $f_t$, detailing the clues that led to the correct inference. If there is no match then $p_t$ = K+1.
+1) **Privacy Evaluator**:- An LLM instance whose job is assess the privacy protection levels, ensuring that private content is adequately obscured against re-identification. It generates top-K re-indentification results which are compared with their ground-truth label. If a match is found, the rank of the matched result is considered a privacy protection score \(p_t\). Further, the evaluator is prompted to provide natural language feedback \(f_t\), detailing the clues that led to the correct inference. If there is no match then \(p_t\) = K+1.
 
-2) **Utility Evaluator**:- An LLM instance whose responsibility is to examine the downstream task utility of the anonymized text. Given the ground truth label c, the utility score $u_t$ can be calculated using its logit following traditional uncertainty quantification methods.
+2) **Utility Evaluator**:- An LLM instance whose responsibility is to examine the downstream task utility of the anonymized text. Given the ground truth label c, the utility score \(u_t\) can be calculated using its logit following traditional uncertainty quantification methods.
 
-3) **LLM Optimizer**:- To ensure that the primary objective of achieving maximum privacy is prioritized over utility, the lexicographic-optimizer LLM operates in two different modes. When the privacy objective value has not yet reached the pre-set maximum K + 1, the lexicographic optimizer should focus on maximizing the privacy objective, which is achieved by taking the value of the meta-instruction variable as $I_pr$ that instructs the LLM to further anonymize $x_t$ according to textual feedback $f_t$.
+3) **LLM Optimizer**:- To ensure that the primary objective of achieving maximum privacy is prioritized over utility, the lexicographic-optimizer LLM operates in two different modes. When the privacy objective value has not yet reached the pre-set maximum K + 1, the lexicographic optimizer should focus on maximizing the privacy objective, which is achieved by taking the value of the meta-instruction variable as \(I_{pr}\) that instructs the LLM to further anonymize \(x_t\) according to textual feedback \(f_t\).
 
-Once the privacy objective value has reached the maximum threshold, the meta instruction shifts to $I_ur$, prompting the LLM to optimize the utility level without compromising the achieved privacy objective value.
+Once the privacy objective value has reached the maximum threshold, the meta instruction shifts to \(I_{ur}\), prompting the LLM to optimize the utility level without compromising the achieved privacy objective value.
 
 The iterative process continues until either the pre-defined maximum values for both objectives
 are reached or the maximum number of iterations T is met.
@@ -204,12 +204,12 @@ Utility preservation metrics are gauged by the performance of a BERT-based class
 
 ### References
 
-<a id="reference-1"></a>1. Abadi, M. et al. (2016). [Deep Learning with Differential Privacy](https://arxiv.org/pdf/1607.00133)
-<a id="reference-2"></a>2. Li, X., et al. (2022). [Large Language Models Can Be Strong Differentially Private Learners](https://openreview.net/forum?id=bVuP3ltATMz).
-<a id="reference-3"></a>3. Yu, D. et al. (2022). [Differentially Private Fine-tuning of Language Models](https://openreview.net/forum?id=Q42f0dfjECO).
-<a id="reference-4"></a>4. Zhang, J. et al. (2025). [DYNTEXT: Semantic-Aware Dynamic Text Sanitization for Privacy-Preserving LLM Inference](https://aclanthology.org/2025.findings-acl.1038/).
-<a id="reference-5"></a>5. Albanese, F. et al. (2023). [Text Sanitization Beyond Specific Domains: Zero-Shot Redaction & Substitution with Large Language Models](https://arxiv.org/abs/2311.10785).
-<a id="reference-6"></a>6. Dou, Y. et al. (2024). [Reducing Privacy Risks in Online Self-Disclosures with Language Models](https://arxiv.org/abs/2311.09538)
-<a id="reference-7"></a>7. Staab, R. et al. (2025). [Language Models are Advanced Anonymizers](https://arxiv.org/abs/2402.13846)
-<a id="reference-8"></a>8. Yang, T. et al. (2025). [Robust Utility-Preserving Text Anonymization Based on Large Language Models](https://aclanthology.org/2025.acl-long.1404/)
+1. <span id="reference-1"></span>Abadi, M. et al. (2016). [Deep Learning with Differential Privacy](https://arxiv.org/pdf/1607.00133)
+2. <span id="reference-2"></span>Li, X., et al. (2022). [Large Language Models Can Be Strong Differentially Private Learners](https://openreview.net/forum?id=bVuP3ltATMz).
+3. <span id="reference-3"></span>Yu, D. et al. (2022). [Differentially Private Fine-tuning of Language Models](https://openreview.net/forum?id=Q42f0dfjECO).
+4. <span id="reference-4"></span>Zhang, J. et al. (2025). [DYNTEXT: Semantic-Aware Dynamic Text Sanitization for Privacy-Preserving LLM Inference](https://aclanthology.org/2025.findings-acl.1038/).
+5. <span id="reference-5"></span>Albanese, F. et al. (2023). [Text Sanitization Beyond Specific Domains: Zero-Shot Redaction & Substitution with Large Language Models](https://arxiv.org/abs/2311.10785).
+6. <span id="reference-6"></span>Dou, Y. et al. (2024). [Reducing Privacy Risks in Online Self-Disclosures with Language Models](https://arxiv.org/abs/2311.09538)
+7. <span id="reference-7"></span>Staab, R. et al. (2025). [Language Models are Advanced Anonymizers](https://arxiv.org/abs/2402.13846)
+8. <span id="reference-8"></span>Yang, T. et al. (2025). [Robust Utility-Preserving Text Anonymization Based on Large Language Models](https://aclanthology.org/2025.acl-long.1404/)
 
