@@ -16,14 +16,13 @@ social: false # includes social icons at the bottom of the page
 <!-- <br> -->
 <span style="font-weight:500; font-size: 25px"> Welcome to my AI/ML Journey! </span>
 
-Hello there, I am Aditya Saxena. Since my childhood, I have been curious about machines; how they work and how they are developed. This led me to study Computational Mechanics & Computer Science at IIT Delhi. When I entered college in Nov '22, I witnessed the launch of ChatGPT- OpenAI's flagship AI model at the time. Its ability to understand instuctions, solve problems and read multiple modalities really fascinated me and from here, my journey of learning AI and ML began.
+Hello there, I am Aditya Saxena. Since my childhood, I have been interested in engineering and mathematics. This curiosity to learn led me to study Computational Mechanics & Computer Science at IIT Delhi. When I entered college in Nov '22, I witnessed the launch of ChatGPT- OpenAI's flagship AI model at the time. Its ability to understand instuctions, solve problems and read multiple modalities really fascinated me and from here, my journey of learning AI and ML began.
 
-My research interests revolve around Natural Language Processing, Multimodal LLMs and Reinforcement learning particularly:- Multilingual NLP, VLMs, RL post-training and AI agents. More recently, I am also exploring alignment safety, LLM Privacy and mechanistic interpretability. One can find me at cafes or coffee shops reading about such stuff.
+I am currently working in IBM Research in the AI Foundational Models team where I am involved in RL post-training of Granite Models in Chat/Instruction Following/Safety and Reasoning domains. My research interests revolve around Natural Language Processing, Multimodal LLMs and Reinforcement learning particularly:-RL post-training, AI agents and VLMs. More recently, I am also exploring model privacy, safety, alignment and mechanistic interpretability. One can find me at cafes or coffee shops reading about this stuff.
 
 Outside academics, I’ve always strived to keep life vibrant. I enjoy the intensity of sports like:- Football and Formula 1, the escapism of novels and books, and the imagination of anime. These interests keep me grounded and creative, reminding me that learning doesn’t only happen in classrooms or labs.
 
 This site is a little window into my journey — the projects I’ve worked on, the ideas I’m exploring, and the things that inspire me. Thanks for stopping by, and I hope you enjoy looking around.
-
 
 > “You have to work hard in the dark to shine in the light” — Kobe Bryant
 
